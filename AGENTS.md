@@ -33,14 +33,14 @@ THIRD_PARTY.md  Attribution for vendored/referenced external skills.
 
 ## Resolving Skill References
 
-A `/name` or `name` reference in any file resolves to `skills/<name>.md`. All cross-references in this repo must resolve to a real file — if a reference points nowhere, that is a bug in the repo.
+A `/name` or `name` reference in any file resolves to `skills/<name>/SKILL.md`. All cross-references in this repo must resolve to a real file — if a reference points nowhere, that is a bug in the repo.
 
 ## Consuming This Repo (for projects)
 
 This repo is not meant to be depended on in place. **Copy relevant files per project** — see `README.md` for per-project-type copy recipes. After copying:
 
 - `roles/*.md` → the project's `.agents/rules/` (or equivalent per host)
-- `skills/*.md` → the project's skills directory per host (`.agents/skills/`, `.opencode/skills/`, `~/.config/opencode/skills/`, etc.)
+- `skills/<name>/SKILL.md` → the project's skills directory per host (`.agents/skills/`, `.opencode/skills/`, `~/.config/opencode/skills/`, etc.)
 - `style-guides/*.md` → a project docs dir (e.g. `.agents/rules/` alongside roles)
 - `rules/global-rules.md` → global agent config or project rules, per host
 

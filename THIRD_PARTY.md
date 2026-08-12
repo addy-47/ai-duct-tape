@@ -4,9 +4,9 @@ This repo vendors or references third-party agent skills. Attribution and upstre
 
 | Skill | Status | Upstream | License |
 |---|---|---|---|
-| `skills/grill-me.md` | **Vendored** (content copied into this repo) | [mattpocock/skills](https://github.com/mattpocock/skills) — `skills/productivity/grilling/SKILL.md` | MIT |
+| `skills/grill-me/SKILL.md` | **Vendored** (content copied into this repo) | [mattpocock/skills](https://github.com/mattpocock/skills) — `skills/productivity/grilling/SKILL.md` | MIT |
 | `impeccable` (referenced in `roles/frontend-engineer.md`) | **Referenced** — install separately; commonly available as a global skill | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | — |
-| `skills/agy-subagent.md` | **Vendored** (host-specific) | Originates from the user's Antigravity IDE setup; `agy` CLI | — |
+| `skills/agy-subagent/SKILL.md` | **Vendored** (host-specific) | Originates from the user's Antigravity IDE setup; `agy` CLI | — |
 
 ## Host-specific notes
 
@@ -15,4 +15,4 @@ This repo vendors or references third-party agent skills. Attribution and upstre
 
 ## Updating vendored skills
 
-`skills/grill-me.md` is a copy. To refresh it: fetch the upstream file, re-apply the frontmatter style used in this repo, and update the version/path note above.
+`skills/grill-me/SKILL.md` is a copy. To refresh it: fetch the upstream file, re-apply the frontmatter style used in this repo, and update the version/path note above.

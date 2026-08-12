@@ -25,7 +25,7 @@ Copy the relevant files into each project. Do not clone or submodule this repo i
 ```
 rules/global-rules.md            → .agents/rules/ or global agent config
 roles/*.md                       → .agents/rules/
-skills/*.md                      → .agents/skills/  (per host, see below)
+skills/<name>/SKILL.md            → .agents/skills/  (per host, see below)
 style-guides/general.md          → .agents/rules/
 style-guides/typescript-react.md → .agents/rules/
 style-guides/rust.md             → .agents/rules/   (if backend is Rust)
@@ -45,7 +45,7 @@ style-guides/general.md  style-guides/<language>.md
 ```
 rules/global-rules.md
 roles/ml-research-engineer.md  roles/qa-engineer.md  roles/test-engineer.md
-skills/create-dataset.md  skills/create-eval.md  skills/feedback-review.md
+skills/create-dataset/SKILL.md  skills/create-eval/SKILL.md  skills/feedback-review/SKILL.md
 ```
 
 ### Where skills/roles land per host
@@ -60,14 +60,14 @@ skills/create-dataset.md  skills/create-eval.md  skills/feedback-review.md
 ## Host-Specific Content
 
 Two items are Antigravity-specific and should be **filtered out** when copying to other hosts:
-- `skills/agy-subagent.md` — the `agy` CLI subagent orchestration
+- `skills/agy-subagent/SKILL.md` — the `agy` CLI subagent orchestration
 - `/schedule` in `roles/ml-research-engineer.md` — Antigravity's native cron command
 
 Both are flagged ⚠️ in-place; `THIRD_PARTY.md` has details.
 
 ## Contributing / Extending
 
-- **New skill:** add `skills/<name>.md` with a `description:` frontmatter block. Any `/name` reference in another file must resolve to it.
+- **New skill:** add `skills/<name>/SKILL.md` with a `name:` and `description:` frontmatter block. Any `/name` reference in another file must resolve to it.
 - **New role:** add `roles/<role>.md` following the existing persona skeleton (how you think → invariants → skills you reach for → what you don't own → boundary-leak detection).
 - **New language guide:** copy `style-guides/rust.md`, adapt the sections (see `style-guides/README.md`).
 - **Vendored external skills:** record attribution in `THIRD_PARTY.md`.

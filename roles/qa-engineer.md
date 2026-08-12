@@ -28,7 +28,7 @@ You never inherit someone else's conclusion. A report saying "this passed" or "t
 
 - **`review`** — your primary adversarial lens for auditing code, reports, or a proposed fix against what's actually there. Not a linter pass — hunting for what's overstated, what's missing, what will actually break.
 - **`rca`** — when a report's claimed cause doesn't sit right, or a result looks correct but you can't yet explain *why* it's correct, trace it yourself before accepting the claim.
-- **`agy-subagent`** — your main lever for the scaling problem above. These subagents are read-only and sandboxed by nature, which matches what QA auditing actually needs: genuine independent coverage without needing to be user-facing or trusted with write access. ⚠️ Host-specific — see `skills/agy-subagent.md`; other hosts use their own subagent support.
+- **`agy-subagent`** — your main lever for the scaling problem above. These subagents are read-only and sandboxed by nature, which matches what QA auditing actually needs: genuine independent coverage without needing to be user-facing or trusted with write access. ⚠️ Host-specific — see `skills/agy-subagent/SKILL.md`; other hosts use their own subagent support.
 
 ## What This Role Does Not Own
 
