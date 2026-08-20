@@ -1,74 +1,114 @@
-# AI Duct Tape
+# 🛠️ AI Duct Tape
 
-A **source of truth library** of agent rules, roles, skills, and code style guides. Nothing here is tied to a specific product or stack — files are generic by design and get **copied into projects**, not depended on in place.
+> **The Source of Truth Library for Autonomous AI Agent Contexts**  
+> A curated, modular library of battle-tested rules, personas, engineering skills, and code style guides designed for AI coding assistants.
 
-This repo is what the owner reaches for when setting up a new project's agent context: the global rules that should govern every thread, the role personas that define what each agent does (and doesn't) own, the reusable workflows (`/skill-name`), and the per-language style guides.
+Nothing in this repository is hardcoded to a single project or company product. Instead, **AI Duct Tape** is the foundational blueprint you copy into your project's agent directory (`.agents/`, `.opencode/`, `.claude/`, etc.) to turn standard LLMs into rigorous, disciplined, and proactive software engineers.
 
-## Contents
+---
 
-| Directory | What's in it |
-|---|---|
-| `rules/` | `global-rules.md` — defaults for every project, every thread, every stack |
-| `roles/` | Agent personas: backend-engineer, frontend-engineer, system-architect, ml-research-engineer, qa-engineer, test-engineer |
-| `skills/` | Workflows referenced as `/<name>`: planning, refactoring, testing, RCA, hotfix, handoff, review, grilling, ML/data, and more |
-| `style-guides/` | `general.md` (stack-agnostic) + `design.md` + `rust.md`, `typescript-react.md`, `python.md`, `go.md` |
-| `THIRD_PARTY.md` | Attribution for vendored/referenced external skills |
-
-**Agents navigating this repo:** read `AGENTS.md` — it maps task types to the files you should read.
-
-## Copy Recipes
-
-Copy the relevant files into each project. Do not clone or submodule this repo into a project.
-
-### Full-stack project
+## 🏛️ The Four Pillars
 
 ```
-rules/global-rules.md            → .agents/rules/ or global agent config
-roles/*.md                       → .agents/rules/
-skills/<name>/SKILL.md            → .agents/skills/  (per host, see below)
-style-guides/general.md          → .agents/rules/
-style-guides/design.md            → .agents/rules/
-style-guides/typescript-react.md → .agents/rules/
-style-guides/rust.md             → .agents/rules/   (if backend is Rust)
+ai-duct-tape/
+├── rules/         📜 Global invariants & operational constraints (Rule Zero, Blocker Escalation)
+├── roles/         🎭 6 specialized agent personas with invariant boundaries and ownership rules
+├── skills/        ⚡ 23 structured workflows (/intent-alignment, /architect, /review, etc.)
+└── style-guides/  📐 Stack-specific & general engineering standards (Design, TS, Rust, Go, Python)
 ```
 
-### Backend-only project
-
-```
-rules/global-rules.md
-roles/backend-engineer.md  roles/system-architect.md
-roles/qa-engineer.md       roles/test-engineer.md
-style-guides/general.md  style-guides/<language>.md
-```
-
-### ML / data project
-
-```
-rules/global-rules.md
-roles/ml-research-engineer.md  roles/qa-engineer.md  roles/test-engineer.md
-skills/create-dataset/SKILL.md  skills/create-eval/SKILL.md  skills/feedback-review/SKILL.md
-```
-
-### Where skills/roles land per host
-
-| Host | Roles | Skills |
+| Pillar | Overview | Read More |
 |---|---|---|
-| Antigravity | `.agents/rules/` | `.agents/skills/` (⚠️ filter host-specific content) |
-| opencode (project) | `.opencode/` or `.agents/rules/` | `.opencode/skills/` |
-| opencode (global) | `~/.config/opencode/` | `~/.config/opencode/skills/` |
-| Claude Code | `.claude/` | `.claude/skills/` |
+| **📜 Rules** | Universal constraints that govern every thread and model decision. Establishes Rule Zero (*Ask, Don't Assume*), the 2-Attempt blocker rule, and anti-hallucination policies. | [rules/README.md](rules/README.md) |
+| **🎭 Roles** | Deep personas (Backend, Frontend, Architect, ML Research, QA, Test) equipped with domain mindsets, boundary-leak alerts, and explicit anti-goals. | [roles/README.md](roles/README.md) |
+| **⚡ Skills** | 23 executable workflows triggered as slash commands (`/name`) that guide agents step-by-step through discovery, architecture, planning, refactoring, and review. | [skills/README.md](skills/README.md) |
+| **📐 Style Guides** | Strict coding, API, and design standards ensuring consistent, high-performance, and accessible code across languages and frameworks. | [style-guides/README.md](style-guides/README.md) |
 
-## Host-Specific Content
+---
 
-Two items are Antigravity-specific and should be **filtered out** when copying to other hosts:
-- `skills/agy-subagent/SKILL.md` — the `agy` CLI subagent orchestration
-- `/schedule` in `roles/ml-research-engineer.md` — Antigravity's native cron command
+## 🔄 The Autonomous Engineering Lifecycle
 
-Both are flagged ⚠️ in-place; `THIRD_PARTY.md` has details.
+AI Duct Tape aligns agent workflows along the entire software development lifecycle:
 
-## Contributing / Extending
+```mermaid
+flowchart LR
+    A[💡 Idea / Request] --> B[🎯 /intent-alignment]
+    B --> C[📐 /architect & /create-spec]
+    C --> D[📋 /create-plan]
+    D --> E[🍰 /build-vertical]
+    E --> F[🧪 /test-plan]
+    F --> G[🔬 /review]
+    G --> H[🤝 /handoff]
+```
 
-- **New skill:** add `skills/<name>/SKILL.md` with a `name:` and `description:` frontmatter block. Any `/name` reference in another file must resolve to it.
-- **New role:** add `roles/<role>.md` following the existing persona skeleton (how you think → invariants → skills you reach for → what you don't own → boundary-leak detection).
-- **New language guide:** copy `style-guides/rust.md`, adapt the sections (see `style-guides/README.md`).
-- **Vendored external skills:** record attribution in `THIRD_PARTY.md`.
+1. **Discovery & Alignment:** Pressure-test assumptions early (`/intent-alignment`, `/idea-validator`, `/grill-me`).
+2. **Architecture & Specification:** Formulate behavioral specs (`/create-spec`) and architecture docs (`/architect`).
+3. **Phased Planning:** Draft detailed step-by-step execution plans (`/create-plan`, `/create-loop`).
+4. **Execution & Implementation:** Implement thin end-to-end traces across all layers (`/build-vertical`, `/refactor-clean`, `/hotfix`).
+5. **Rigorous Verification:** Run iterative test loops (`/test-plan`) and adversarial senior code reviews (`/review`, `/feedback-review`).
+6. **Session Handoff:** Package state cleanly for the next thread (`/handoff`).
+
+---
+
+## 📋 Copy Recipes (Quickstart)
+
+Copy relevant files directly into your project's agent configuration folder. Do not submodule this repository.
+
+### 🌐 Full-Stack Project (React/TypeScript + Backend)
+```bash
+rules/global-rules.md            → .agents/rules/global-rules.md
+roles/*.md                       → .agents/rules/
+skills/*/SKILL.md                → .agents/skills/<skill-name>/SKILL.md
+style-guides/general.md          → .agents/rules/
+style-guides/design.md           → .agents/rules/
+style-guides/typescript-react.md → .agents/rules/
+style-guides/<backend-lang>.md   → .agents/rules/
+```
+
+### ⚙️ Backend-Only Microservice (Rust / Go / Python)
+```bash
+rules/global-rules.md            → .agents/rules/global-rules.md
+roles/backend-engineer.md        → .agents/rules/
+roles/system-architect.md        → .agents/rules/
+roles/qa-engineer.md             → .agents/rules/
+roles/test-engineer.md           → .agents/rules/
+style-guides/general.md          → .agents/rules/
+style-guides/<language>.md       → .agents/rules/
+```
+
+### 🧠 Machine Learning & Data Evaluation
+```bash
+rules/global-rules.md            → .agents/rules/global-rules.md
+roles/ml-research-engineer.md    → .agents/rules/
+roles/qa-engineer.md             → .agents/rules/
+skills/create-dataset/SKILL.md   → .agents/skills/create-dataset/SKILL.md
+skills/create-eval/SKILL.md      → .agents/skills/create-eval/SKILL.md
+style-guides/general.md          → .agents/rules/
+style-guides/python.md           → .agents/rules/
+```
+
+---
+
+## 🖥️ Agent Host Compatibility
+
+| Host | Roles Placement | Skills Placement |
+|---|---|---|
+| **Antigravity** | `.agents/rules/` | `.agents/skills/` *(⚠️ filter host-specific content)* |
+| **OpenCode (Project)** | `.opencode/` or `.agents/rules/` | `.opencode/skills/` |
+| **OpenCode (Global)** | `~/.config/opencode/` | `~/.config/opencode/skills/` |
+| **Claude Code** | `.claude/` | `.claude/skills/` |
+| **Cursor / Windsurf** | `.cursor/rules/` or `.windsurfrules` | Workflows directory |
+
+*(⚠️ Note: `skills/agy-subagent/` and `/schedule` in `roles/ml-research-engineer.md` are Antigravity-specific features.)*
+
+---
+
+## 🧭 Navigation for Agents
+
+If you are an AI assistant browsing this repository, read **[AGENTS.md](AGENTS.md)** first for a direct lookup map linking task types to required reading files.
+
+---
+
+## 🤝 Attribution
+
+Third-party skills, upstream origins, and vendored references (e.g. `grill-me`, `impeccable`) are documented in [THIRD_PARTY.md](THIRD_PARTY.md).
