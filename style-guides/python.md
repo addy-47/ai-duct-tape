@@ -18,10 +18,12 @@ This is the durable coding standard for Python in this project's ecosystem. **Ag
 - **Naming:** `snake_case` for functions/variables, `UPPER_CASE` for module-level constants, `PascalCase` for classes.
 - **Line length:** ≤ 88 characters (ruff default). Long signatures are fine; long logic chains are not.
 
-## 3. Typing
+## 3. Typing & Data Contracts
 
 - **Type hints are mandatory** on all public function signatures and data structures. Bare `Any` is discouraged — use `type`/`TypeVar`/`Protocol`/generics where they add information.
+- **Boundary Data Contracts:** Use Pydantic `BaseModel` (v2) or `@dataclass(frozen=True)` / `TypedDict` for structured schema validation and serialized I/O. Do not pass untyped arbitrary `dict` across internal domains.
 - Run `mypy --strict` (or the project's configured type checker) as part of verification.
+
 
 ## 4. Module Organization
 

@@ -7,10 +7,12 @@ Per-language engineering standards. **Agents doing write operations must read th
 | File | Scope |
 |---|---|
 | `general.md` | Language-agnostic best practices — applies to every stack: modularity, API standardization, CLI discipline, security, Docker, `.gitignore`. Read this **always**. |
+| `design.md` | Stack-agnostic UI/UX & design standards: design tokens, typography, copy architecture (`<xxx>Copy.ts`), layman language rules, gesture contracts, interactive states, accessibility (WCAG AA), and CSS conventions. |
+| `typescript-react.md` | TypeScript / React frontend code architecture and state management |
 | `rust.md` | Rust backend/services code |
-| `typescript-react.md` | TypeScript / React frontend code |
 | `python.md` | Python services and scripts |
 | `go.md` | Go services and APIs |
+
 
 ## How to Use
 

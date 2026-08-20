@@ -18,7 +18,7 @@ THIRD_PARTY.md  Attribution for vendored/referenced external skills.
 |---|---|
 | Any task, always | `rules/global-rules.md` |
 | Writing/modifying backend code | `rules/global-rules.md` + `roles/backend-engineer.md` + `style-guides/general.md` + the language guide (`style-guides/rust.md` / `go.md` / `python.md`) |
-| Writing/modifying frontend code | `rules/global-rules.md` + `roles/frontend-engineer.md` + `style-guides/general.md` + `style-guides/typescript-react.md` |
+| Writing/modifying frontend code | `rules/global-rules.md` + `roles/frontend-engineer.md` + `style-guides/general.md` + `style-guides/design.md` + `style-guides/typescript-react.md` |
 | Architectural decisions / new features | `rules/global-rules.md` + `roles/system-architect.md` + skills: `intent-alignment.md`, `architect.md`, `create-spec.md`, `validate.md` |
 | Planning implementation | skills: `create-plan.md`, `create-loop.md`, `modify-plan.md` |
 | Testing | `roles/test-engineer.md` + skills: `test-plan.md` |

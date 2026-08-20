@@ -11,7 +11,7 @@ This repo is what the owner reaches for when setting up a new project's agent co
 | `rules/` | `global-rules.md` — defaults for every project, every thread, every stack |
 | `roles/` | Agent personas: backend-engineer, frontend-engineer, system-architect, ml-research-engineer, qa-engineer, test-engineer |
 | `skills/` | Workflows referenced as `/<name>`: planning, refactoring, testing, RCA, hotfix, handoff, review, grilling, ML/data, and more |
-| `style-guides/` | `general.md` (stack-agnostic) + `rust.md`, `typescript-react.md`, `python.md`, `go.md` |
+| `style-guides/` | `general.md` (stack-agnostic) + `design.md` + `rust.md`, `typescript-react.md`, `python.md`, `go.md` |
 | `THIRD_PARTY.md` | Attribution for vendored/referenced external skills |
 
 **Agents navigating this repo:** read `AGENTS.md` — it maps task types to the files you should read.
@@ -27,6 +27,7 @@ rules/global-rules.md            → .agents/rules/ or global agent config
 roles/*.md                       → .agents/rules/
 skills/<name>/SKILL.md            → .agents/skills/  (per host, see below)
 style-guides/general.md          → .agents/rules/
+style-guides/design.md            → .agents/rules/
 style-guides/typescript-react.md → .agents/rules/
 style-guides/rust.md             → .agents/rules/   (if backend is Rust)
 ```

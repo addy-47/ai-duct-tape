@@ -30,6 +30,7 @@ This is the durable coding standard for Go in this project's ecosystem. **Agents
 ## 4. Concurrency
 
 - **Prefer goroutines + channels, and finish before the function returns.** A leaked goroutine is a bug.
+- **Coordinated Work & Error Propagation:** Use `golang.org/x/sync/errgroup` for managing parallel subtasks, propagating first error, and bounding concurrency.
 - **Synchronize with `sync` primitives only when a channel is the wrong tool.** If you introduce a `Mutex`, you should be able to justify why a channel/ownership model didn't fit.
 - **Guard against goroutine leaks in tests:** always cancel contexts, close channels, and `WaitGroup.Wait()`.
 - **Never block the runtime** with unbounded work on a single goroutine without a plan for backpressure.
@@ -62,4 +63,5 @@ This is the durable coding standard for Go in this project's ecosystem. **Agents
 
 - **Constants:** No magic inline values. Named constants at the top of the file; shared constants in the owning package.
 - **Secrets & Credentials:** Sensitive values live in environment files (never committed). Never hardcode credentials anywhere, including tests. Provide `.env.example` with placeholders.
-- **Logging:** structured logging with levels (info / warn / error). No scattered `fmt.Println` in production paths.
+- **Logging:** Use `log/slog` for structured logging with levels (info / warn / error) and key-value attributes. No scattered `fmt.Println` or raw `log.Print` in production paths.
+

@@ -2,7 +2,7 @@
 description: TypeScript / React (frontend) code style guide and engineering standards. Agents doing write operations on frontend code should read this before modifying code.
 ---
 
-This is the durable coding standard for the frontend in this project's ecosystem. **Agents doing write operations must read this file before modifying frontend code.**
+This is the durable coding standard for the frontend in this project's ecosystem. **Agents doing write operations must read this file alongside `style-guides/design.md` before modifying frontend code.**
 
 ---
 
@@ -11,9 +11,10 @@ This is the durable coding standard for the frontend in this project's ecosystem
 - **Package Manager:** Always use `pnpm`, never `npm` or `yarn`.
 - **Verification:** Run `pnpm lint` and `pnpm build` after every modification. Zero warnings/errors permitted.
 
-## 2. Data & Content
+## 2. Data & Content Separation
 
-- **Zero Hardcoded Text / Labels:** Banned inline hardcoded strings, labels, select options, or mock objects inside components/pages. All static content must live in `src/data/` (e.g. `appData.ts`, `settingsDomains.ts`).
+- **Zero Hardcoded Text / Labels:** Banned inline hardcoded strings, labels, select options, or mock objects inside components/pages.
+- **Copy Architecture (`<xxx>Copy.ts`):** Domain and feature copy lives in dedicated copy dictionaries (`src/data/copy/<feature>Copy.ts` or `<Feature>Copy.ts`) using `as const`. Components import and consume copy tokens, never inline string literals.
 - **Mock & static UI data live in `src/data/`** — never defined inline in components or individual files.
 
 ## 3. Layering & Boundaries
@@ -33,11 +34,14 @@ This is the durable coding standard for the frontend in this project's ecosystem
 
 - **Strict TypeScript.** `any` is strictly prohibited — define explicit interfaces/types for all props and service returns. If types get complex, define them explicitly. `any` is treated the same as a hardcoded secret: flag it, fix it.
 - **Component Consolidation & Deduplication:** Audit and merge components performing identical or near-identical visual/functional tasks into clean, configurable shared primitives.
-- **Never assume a service call succeeds:** loading state, error state, and backend-not-ready state are the default cases to design for, not optional edge cases.
+- **5 Core UI States:** Every dynamic data view must explicitly handle: Initial/Idle, Loading/Skeleton, Empty State (with CTA), Success/Active, and Error/Offline (with retry action). Never assume a service call succeeds.
 
-## 6. Design System Compliance
+## 6. Design System & UX Compliance
 
+- **Refer to `style-guides/design.md`** for design tokens, typography scales, accessibility (WCAG AA), gesture contracts, and utility class conventions.
 - **The design system is a closed system:** a fixed set of emphasis/elevation levels, each with a defined purpose. Do not add a new level for a one-off layout problem.
 - **Reach for the system's primitives before conventional widgets.** Composition over invention.
 - **Expression never outranks usability.** When they conflict, usability wins — and say so.
 - **Performance is not optional:** visually heavy components get memoized; animation loops throttle with activity; no unnecessary re-renders.
+- **Touch Targets:** Minimum 44x44px interactive hitbox for touch/pointer targets.
+

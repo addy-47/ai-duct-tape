@@ -32,6 +32,8 @@ description: Coding best practices that must be followed after planning stage - 
 - Every service has a versioned base path: `/api/v1/<service-name>` (e.g. `/api/v1/orchestrator`)
 - Route definitions live in the main entry file (`main.go`, `main.py`, etc.) — just the definitions, not the logic. Handlers and business logic live in their own files
 - All endpoints across all services return the same response envelope: `{ data, error, meta }`
+- **Request Tracing & Correlation IDs:** Standardize `X-Request-ID` (or W3C `traceparent`) across incoming requests and propagate downstream in all multi-service calls and logs.
+- **Idempotency for Mutating Actions:** Non-idempotent mutations (POST/PUT payments, orders, side-effect triggers) should accept an `Idempotency-Key` header and guard against duplicate execution.
 - HTTP status codes must be used consistently across all services — pick a convention and document it. Do not mix `400` and `422` for the same class of error across services
 - Service names, container names, and route prefixes must match — use the same identifier everywhere. This is non-negotiable in multi-service codebases
 

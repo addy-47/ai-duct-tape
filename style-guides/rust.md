@@ -6,13 +6,15 @@ This is the durable coding standard for Rust in this project's ecosystem. **Agen
 
 ---
 
-## 1. Module Organization
+## 1. Module Organization & Types
 
 - **Domain over type:** Group code by domain (`services/memory/nli.rs`), never by Rust construct (`models.rs`).
 - **Single responsibility:** 1 responsibility per file. If a file cannot be described in 1 sentence, split it.
 - **File size ceiling:** Flag and justify files exceeding ~600 lines. Do not let files grow silently past this.
 - **`mod.rs` & `lib.rs`:** `mod.rs` is for module declarations + re-exports only. Zero business logic. `lib.rs` is for module declarations + application setup only. Zero business logic.
 - **Visibility:** Use `pub(crate)` over `pub` unless crossing the crate boundary (IPC, plugin surface, or integration tests).
+- **Trait & Generics Design:** Prefer static dispatch (`impl Trait` / generic type parameters) by default. Use dynamic dispatch (`Box<dyn Trait>`) only when heterogeneous collections or dynamic runtime polymorphism is strictly required.
+- **Derives:** Prefer explicit `#[derive(Debug, Clone, PartialEq, Eq)]` on domain types and value objects where semantic equality and logging are needed.
 
 ## 2. Error Handling
 
