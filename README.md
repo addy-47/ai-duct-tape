@@ -12,8 +12,8 @@ Nothing in this repository is hardcoded to a single project or company product. 
 ```
 ai-duct-tape/
 ├── rules/         📜 Global invariants & operational constraints (Rule Zero, Blocker Escalation)
-├── roles/         🎭 6 specialized agent personas with invariant boundaries and ownership rules
-├── skills/        ⚡ 23 structured workflows (/intent-alignment, /architect, /review, etc.)
+├── roles/         🎭 7 specialized agent personas with invariant boundaries and ownership rules
+├── skills/        ⚡ 24 structured workflows (/intent-alignment, /architect, /review, etc.)
 └── style-guides/  📐 Stack-specific & general engineering standards (Design, TS, Rust, Go, Python)
 ```
 
@@ -21,7 +21,7 @@ ai-duct-tape/
 |---|---|---|
 | **📜 Rules** | Universal constraints that govern every thread and model decision. Establishes Rule Zero (*Ask, Don't Assume*), the 2-Attempt blocker rule, and anti-hallucination policies. | [rules/README.md](rules/README.md) |
 | **🎭 Roles** | Deep personas (Backend, Frontend, Architect, ML Research, QA, Test) equipped with domain mindsets, boundary-leak alerts, and explicit anti-goals. | [roles/README.md](roles/README.md) |
-| **⚡ Skills** | 23 executable workflows triggered as slash commands (`/name`) that guide agents step-by-step through discovery, architecture, planning, refactoring, and review. | [skills/README.md](skills/README.md) |
+| **⚡ Skills** | 24 executable workflows triggered as slash commands (`/name`) that guide agents step-by-step through discovery, architecture, planning, refactoring, and review. | [skills/README.md](skills/README.md) |
 | **📐 Style Guides** | Strict coding, API, and design standards ensuring consistent, high-performance, and accessible code across languages and frameworks. | [style-guides/README.md](style-guides/README.md) |
 
 ---
@@ -36,16 +36,16 @@ flowchart LR
     B --> C[📐 /architect & /create-spec]
     C --> D[📋 /create-plan]
     D --> E[🍰 /build-vertical]
-    E --> F[🧪 /test-plan]
+    E --> F[🧪 /create-test & /test]
     F --> G[🔬 /review]
     G --> H[🤝 /handoff]
 ```
 
-1. **Discovery & Alignment:** Pressure-test assumptions early (`/intent-alignment`, `/idea-validator`, `/grill-me`).
+1. **Discovery & Alignment:** Pressure-test assumptions early (`/intent-alignment`, `/grill-me`).
 2. **Architecture & Specification:** Formulate behavioral specs (`/create-spec`) and architecture docs (`/architect`).
 3. **Phased Planning:** Draft detailed step-by-step execution plans (`/create-plan`, `/create-loop`).
 4. **Execution & Implementation:** Implement thin end-to-end traces across all layers (`/build-vertical`, `/refactor-clean`, `/hotfix`).
-5. **Rigorous Verification:** Run iterative test loops (`/test-plan`) and adversarial senior code reviews (`/review`, `/feedback-review`).
+5. **Rigorous Verification:** Construct structural tests and run iterative execution loops (`/create-test`, `/test`) along with adversarial senior code reviews (`/review`, `/feedback-review`).
 6. **Session Handoff:** Package state cleanly for the next thread (`/handoff`).
 
 ---
@@ -63,7 +63,7 @@ style-guides/general.md          → .agents/rules/
 style-guides/design.md           → .agents/rules/
 style-guides/typescript-react.md → .agents/rules/
 style-guides/<backend-lang>.md   → .agents/rules/
-```
+``` specialized agent personas with invariant boundaries and ownership rules
 
 ### ⚙️ Backend-Only Microservice (Rust / Go / Python)
 ```bash

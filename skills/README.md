@@ -1,6 +1,6 @@
 # Skills Library
 
-A collection of **23 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
+A collection of **24 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
 
 A skill in this repo is an executable standard operating procedure (SOP) that guides an AI agent through a specific engineering discipline — complete with discovery steps, human-in-the-loop checkpoints, and strict verification gates.
 
@@ -11,7 +11,7 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 | If your goal is to... | Run Skill |
 |---|---|
 | Figure out what we are actually building before writing code | `/intent-alignment` |
-| Pressure-test a new product idea, feature, or tech choice | `/idea-validator` or `/grill-me` |
+| Pressure-test a new product idea, feature, or tech choice | `/grill-me` |
 | Validate a proposed tech stack swap, dependency, or architectural pivot | `/validate` |
 | Draft a high-level (HLD) or low-level (LLD) system architecture | `/architect` |
 | Create a language-agnostic behavioral specification | `/create-spec` |
@@ -21,7 +21,8 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 | Implement a thin end-to-end slice across all layers before going deep | `/build-vertical` |
 | Audit a plan or bug report against the actual code before touching anything | `/feedback-review` |
 | Perform an adversarial senior code review for scale and maintainability | `/review` |
-| Run an iterative testing loop until code genuinely passes | `/test-plan` |
+| Construct a test structurally capable of catching real failures | `/create-test` |
+| Run an iterative testing loop until code genuinely passes | `/test` |
 | Clean up / decouple code with zero logic or behavior changes | `/refactor-clean` |
 | Re-architect subsystem logic while intentionally superseding old behavior | `/refactor-arch` |
 | Apply an emergency surgical patch to a broken production system | `/hotfix` |
@@ -39,7 +40,6 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 
 ### 1. 🎯 Discovery & Alignment
 * [skills/intent-alignment/SKILL.md](intent-alignment/SKILL.md) — Aligns mental models on user outcomes and constraints before any planning or code begins.
-* [skills/idea-validator/SKILL.md](idea-validator/SKILL.md) — Socratic scrutiny of brand-new ideas, features, or product proposals before investing engineering time.
 * [skills/grill-me/SKILL.md](grill-me/SKILL.md) — Relentlessly grills the user about design decisions, tradeoffs, and edge cases.
 * [skills/validate/SKILL.md](validate/SKILL.md) — Deep, evidence-backed validation of proposed architectural changes or new dependencies.
 
@@ -54,7 +54,8 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 ### 3. 🔬 Review & Verification
 * [skills/feedback-review/SKILL.md](feedback-review/SKILL.md) — Pre-implementation audit: checks proposals against real codebase reality to eliminate hallucinations.
 * [skills/review/SKILL.md](review/SKILL.md) — Adversarial senior code review hunting for complexity, scale breaks, and anti-patterns with drop-in replacements.
-* [skills/test-plan/SKILL.md](test-plan/SKILL.md) — Generic testing workflow looping until tests are genuinely passing with valid assertions.
+* [skills/create-test/SKILL.md](create-test/SKILL.md) — Structural test design ensuring entrypoints, boundaries, and real conditions are tested before execution.
+* [skills/test/SKILL.md](test/SKILL.md) — Generic execution testing workflow looping until tests are genuinely passing with valid output analysis.
 
 ### 4. 🛠️ Execution & Refactoring
 * [skills/refactor-clean/SKILL.md](refactor-clean/SKILL.md) — Behavior-preserving refactor (cleanup, modularization, dead code removal, zero logic changes).

@@ -1,6 +1,6 @@
 # Roles Library
 
-A collection of **6 specialized agent personas** that establish distinct operational mindsets, strict invariant boundaries, and task ownership for AI coding assistants.
+A collection of **7 specialized agent personas** that establish distinct operational mindsets, strict invariant boundaries, and task ownership for AI coding assistants.
 
 ---
 
@@ -14,6 +14,7 @@ A collection of **6 specialized agent personas** that establish distinct operati
 | [ml-research-engineer.md](ml-research-engineer.md) | ML, Data & Evals | Scientific rigor, deterministic data pipelines, leak-free splits, audited datasets, adversarial evaluation design over shallow LLM summaries. |
 | [qa-engineer.md](qa-engineer.md) | Verification & Audit | Adversarial verification, evidence-based review, finding false positives, verifying real runtime behavior over static assumptions. |
 | [test-engineer.md](test-engineer.md) | Automated Testing | Comprehensive test taxonomy (unit, integration, benchmark), deterministic assertions, zero flaky tests, understanding failure causes over exit codes. |
+| [idea-validator.md](idea-validator.md) | Idea Validation | Idea validation & feasibility analysis | 
 
 ---
 

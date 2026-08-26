@@ -1,6 +1,6 @@
 ---
 name: ask
-description: Answer a question directly. Format is determined by the question — not by the user. No code, no implementation, no plans unless a sketch is explicitly what was asked.
+description: Deliver a concise, direct answer to a technical question with zero extraneous boilerplate, unrequested code blocks, or unsolicited planning steps. Trigger on direct factual queries ("how does X work", "what is the difference between A and B", "explain concept X", "quick question").
 ---
 
 

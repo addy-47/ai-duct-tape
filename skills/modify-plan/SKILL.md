@@ -1,6 +1,6 @@
 ---
 name: modify-plan
-description: Modify the current implementation_plan artifact in response to new input, architecture changes, or additional requirements. Does not create a new plan. Use mid-thread only.
+description: Modify an existing implementation plan artifact mid-thread in response to new discoveries, requirement changes, blockers, or architecture adjustments. Use whenever the user asks to "update the plan", "adjust the plan", "add a step to the plan", or "pivot the plan". Do not use to create new plans from scratch.
 ---
 
 

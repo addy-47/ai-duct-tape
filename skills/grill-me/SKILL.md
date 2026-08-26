@@ -1,6 +1,6 @@
 ---
 name: grill-me
-description: Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases. Vendored from mattpocock/skills (MIT) — see THIRD_PARTY.md.
+description: Interrogate and grill the user relentlessly through an interactive Socratic interview to map design trees, surface hidden assumptions, and force low-level tradeoffs. Use when the user says "grill me", "interview me", "stress test my decisions", "poke holes in my approach", or when choosing between competing low-level implementation options.
 ---
 
 

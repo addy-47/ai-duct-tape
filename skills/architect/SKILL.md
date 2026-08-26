@@ -1,6 +1,6 @@
 ---
 name: architect
-description: Architect a system, service, or feature through iterative discussion before anything is formalized. Produces HLD or LLD depending on what's asked. Entry point after intent is aligned, before a spec is written. Trigger with "design a system for", "how should we architect", "let's think through the design for", "architect this before we spec it".
+description: Lead an iterative system design session producing High-Level (HLD) or Low-Level (LLD) architecture docs before formalizing into a spec. Trigger on "design a system for", "how should we architect", "let's design", "system architecture for X", "HLD/LLD for", or before writing specs for multi-component systems.
 ---
 
 

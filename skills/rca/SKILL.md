@@ -1,6 +1,6 @@
 ---
 name: rca
-description: Root cause analysis for a bug, regression, or unexpected behavior. Investigative and retrospective.
+description: Perform a structured root cause analysis (RCA) on bugs, test regressions, flakes, or production incidents before proposing fixes. Gathers symptoms, reproduces issues, traces failure paths, and isolates causes. Trigger on "why did this fail", "investigate this regression", "RCA on this error", "diagnose this flake", or "trace this bug".
 ---
 
 

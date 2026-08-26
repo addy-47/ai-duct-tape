@@ -1,6 +1,6 @@
 ---
 name: feedback-review
-description: Audit a plan, bug report, or refactor proposal against actual code. Acts as middleware between planning and execution. Confirms what is real, flags false positives, surfaces what was missed. Requires understanding why the code is the way it is, not just what it literally does. Does not implement anything.
+description: Audit plans, bug reports, refactor proposals, or agent suggestions against the live codebase before executing. Verifies assumptions, catches hallucinations, and filters false positives without writing code. Trigger on "audit this plan", "sanity check this proposal against the repo", "review this bug report against the code".
 ---
 
 

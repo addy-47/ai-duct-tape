@@ -1,6 +1,6 @@
 ---
 name: report
-description: Produce a full, detailed report as a document artifact — evidence-based analysis of what is asked or the current state of existing systems. Use when the user wants a complete written analysis or solution, not a chat reply.
+description: Produce a comprehensive, evidence-based markdown report artifact analyzing system states, architecture audits, or complex technical questions. Trigger whenever the user asks for a "formal report", "written audit", "comprehensive analysis document", or "in-depth system assessment" as an artifact rather than a quick chat reply.
 ---
 
 

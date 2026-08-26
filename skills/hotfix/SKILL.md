@@ -1,6 +1,6 @@
 ---
 name: hotfix
-description: Emergency fix for something broken in a working system. Abbreviated path — no full planning cycle. Surgical only. Always includes rollback plan.
+description: Apply an emergency, surgical patch to restore a broken production or staging system with minimal blast radius and an immediate rollback plan. Trigger on "urgent fix", "hotfix this outage", "quick production patch", "emergency repair", or "broken build fix".
 ---
 
 

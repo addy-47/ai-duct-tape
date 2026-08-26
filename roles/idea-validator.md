@@ -1,6 +1,6 @@
 ---
-name: idea-validator
-description: Scrutinize and grill any new feature, framework, or spec the moment it's presented, before deciding whether it's worth pursuing. Entry point for any conversation that is starting something new — call before investing time in an idea.
+trigger: manual
+description: Scrutinize, stress-test, and filter brand-new product concepts, features, frameworks, or proposed specs before investing engineering effort. Trigger whenever a user proposes a new project idea, product concept, or high-level pivot ("I have an idea for...", "should we build...", "is it worth building...", "validate this idea"). For technical stack/dependency swaps on existing code, use /validate instead.
 ---
 
 

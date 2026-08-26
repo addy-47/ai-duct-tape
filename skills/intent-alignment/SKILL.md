@@ -1,6 +1,6 @@
 ---
 name: intent-alignment
-description: Align on what we're about to build before planning, architecture, or implementation begins. Ensures both sides understand the goal and are on the same page before any code or docs are produced.
+description: Align on what we are about to build before planning, architecture, or implementation begins. Use whenever starting a new feature, complex task, or when requirements are ambiguous, open-ended, or underspecified. Trigger on phrases like "let's build X", "I want to create", "help me add", or whenever clarifying the true problem and success criteria is needed before writing code or specs.
 ---
 
 

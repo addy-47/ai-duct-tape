@@ -1,6 +1,6 @@
 ---
 name: create-loop
-description: Build a loop outline/skeleton from a goal — structure only, no implementation detail. Defines layers (goals), phases inside each layer, persistent sub-agents, gates, and scheduled check-ins. Depth scales with input complexity. /create-plan fills in each phase once reached.
+description: Build an autonomous orchestration loop skeleton defining milestone goals, phase checkpoints, subagent roles, scheduled check-ins, and human sign-off gates. Use when setting up long-running autonomous workflows, batch pipelines, or unattended agent loops ("set up an agent loop for", "create loop skeleton", "orchestrate long-running run").
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 name: create-plan
-description: Create a "how" implementation plan from the architecture plan in context. Only Phase 1 is planned in detail. All subsequent phases are high-level intent only. Use only at the start of a new thread before implementation begins.
+description: Create a phased, actionable implementation plan from an approved architecture or spec before writing code. Plans Phase 1 in detail while keeping later phases high-level. Use at the start of implementation or when the user says "create a plan", "how should we implement this", "plan the rollout", or "break this into implementation phases".
 ---
 
 

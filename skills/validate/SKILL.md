@@ -1,6 +1,6 @@
 ---
 name: validate
-description: Validate any proposed change before commitment — new architecture, tech stack swap, new spec, new dependency, new pattern. Deep, research-backed, Socratic. Not for brand-new project ideas — use idea-validator for those.
+description: Validate proposed technical changes, architectural pivots, tech stack swaps, third-party libraries, or design patterns before committing. Use when evaluating a migration, adding heavy dependencies, or adopting new patterns ("should we switch to X", "validate this architecture", "is library X better than Y"). For brand-new product/feature concepts, use /idea-validator.
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 name: create-eval
-description: Design and execute a rigorous evaluation for any system that makes probabilistic, threshold-based, or scored decisions. Forces the mindset needed to avoid shallow LLM-judge summaries and premature threshold tweaking. Generic — steps adapt per system, the discipline does not.
+description: Design and run rigorous evaluation harnesses for probabilistic, threshold-based, or LLM-judged systems. Measures failure distributions, boundary conditions, and precision/recall tradeoffs instead of shallow averages. Trigger on "build an eval for this prompt/model", "benchmark LLM outputs", "evaluate scoring model", or "design test metrics for AI pipeline".
 ---
 
 

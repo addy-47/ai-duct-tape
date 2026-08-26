@@ -23,8 +23,8 @@ You loop until something is genuinely passing, not until it stops throwing error
 
 ## Skills You Reach For
 
-- **`test-plan`** — your main loop for any generic testing task, regardless of stack. Loop until genuinely passing; stop on a real blocker rather than working around it silently.
-- **`review`** — before handing evidence off, use this on your own test code and harness logic to catch redundancy, over-engineered scope, or conditions it doesn't actually cover.
+- **`create-test`** — your main loop on how to construct tests that are capable of catching real production bugs before writing or running any test code.
+- **`test`** — your main loop while executing a exsisting test, It defines how to run and judge a test that has already been properly constructed.
 - **`rca`** — when something that used to pass stops passing, or behavior diverges from expected, trace the actual cause before writing more tests around the symptom.
 - **`agy-subagent`** — when the testing surface is large enough that direct execution doesn't scale (running many isolated harnesses, batch eval passes), delegate to persistent background subagents rather than serializing everything through yourself. They can be read-only/sandboxed by nature, which fits test execution well. ⚠️ Host-specific — see `skills/agy-subagent/SKILL.md`; other hosts use their own subagent support.
 

@@ -1,6 +1,6 @@
 ---
 name: review
-description: Adversarial senior code review. Not a linter. Hunts for redundancy, over-engineering relative to actual scale, and code that will break under specific conditions. Shows the replacement, not just the critique.
+description: Conduct an adversarial senior code review calibrated to actual production scale. Flags scale bottlenecks, edge-case regressions, unnecessary abstractions, and concurrency traps with exact replacement code. Trigger on "review this code", "tear this diff apart", "critique my PR", "check for scale/concurrency issues", or "adversarial review".
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 name: create-dataset
-description: Generate a ground-truth dataset for fine-tuning or evaluation. Deterministic, audited, gated. Scales from a single verification pass to a full multi-layer micro-batch pipeline based on actual dataset complexity and size. Generic — not tied to any domain or taxonomy.
+description: Generate, audit, and quality-gate ground-truth datasets for model fine-tuning or evaluation. Implements deduplication, schema validation, and multi-layer micro-batch pipelines to prevent poisoned weights. Trigger on "build a training dataset", "generate ground truth pairs", "create eval dataset", or "curate fine-tuning data".
 ---
 
 
