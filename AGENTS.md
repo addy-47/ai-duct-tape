@@ -8,7 +8,7 @@ Navigation map for any agent working in or consuming this repo. This repo is a *
 rules/          Global rules — defaults that apply to every project, every thread.
 roles/          Role definitions — agent personas (backend, frontend, architect, ML, QA, test).
 skills/         Workflows — named procedures referenced as /<skill-name>.
-style-guides/   Per-language engineering standards + a language-agnostic general guide.
+style-guides/   Per-language & cross-cutting engineering standards (general, testing, design, rust, ts, etc.).
 THIRD_PARTY.md  Attribution for vendored/referenced external skills.
 ```
 
@@ -19,16 +19,16 @@ THIRD_PARTY.md  Attribution for vendored/referenced external skills.
 | Any task, always | `rules/global-rules.md` |
 | Writing/modifying backend code | `rules/global-rules.md` + `roles/backend-engineer.md` + `style-guides/general.md` + the language guide (`style-guides/rust.md` / `go.md` / `python.md`) |
 | Writing/modifying frontend code | `rules/global-rules.md` + `roles/frontend-engineer.md` + `style-guides/general.md` + `style-guides/design.md` + `style-guides/typescript-react.md` |
-| Architectural decisions / new features | `rules/global-rules.md` + `roles/system-architect.md` + skills: `intent-alignment.md`, `architect.md`, `create-spec.md`, `validate.md` |
-| Planning implementation | skills: `create-plan.md`, `create-loop.md`, `modify-plan.md` |
-| Testing | `roles/test-engineer.md` + skills: `test-plan.md` |
-| Verifying/reviewing evidence | `roles/qa-engineer.md` + skills: `review.md`, `feedback-review.md` |
-| Debugging a regression | skills: `rca.md` |
-| ML model/data work | `roles/ml-research-engineer.md` + skills: `create-dataset.md`, `create-eval.md` |
-| Refactoring | skills: `refactor-clean.md` (behavior-preserving) or `refactor-arch.md` (behavior-changing) |
-| Emergency fix | skills: `hotfix.md` |
-| Stress-testing a plan/idea | skills: `grill-me.md` |
-| Ending a thread / new thread | skills: `handoff.md` |
+| Architectural decisions / new features | `rules/global-rules.md` + `roles/system-architect.md` + skills: `intent-alignment`, `architect`, `create-spec`, `validate` |
+| Planning implementation | skills: `create-plan`, `create-loop`, `modify-plan` |
+| Testing, evals & mutation validation | `roles/test-engineer.md` + `style-guides/testing.md` + skills: `create-test`, `test`, `mutate` |
+| Verifying/reviewing evidence | `roles/qa-engineer.md` + skills: `review`, `feedback-review` |
+| Debugging a regression | skills: `rca` |
+| ML model/data work | `roles/ml-research-engineer.md` + skills: `create-dataset`, `create-eval` |
+| Refactoring & mechanical breadth | skills: `refactor-clean` (behavior-preserving), `refactor-arch` (behavior-changing), `create-sprints` (sprint batching) |
+| Emergency fix | skills: `hotfix` |
+| Stress-testing a plan/idea | skills: `grill-me` |
+| Ending a thread / new thread | skills: `handoff` |
 | Frontend polish pass | role `frontend-engineer.md` + `impeccable` (see THIRD_PARTY.md) |
 
 ## Resolving Skill References

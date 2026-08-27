@@ -69,4 +69,5 @@ At the end categorise as :
 
 ## Quick Sanity Check
 
-Before declaring anything done, run the fast syntax/build check for the stack in play (`pnpm build`(NEVER npm) , `cargo check`, `pytest --collect-only`, etc.) — this is a baseline sanity gate, not a substitute for `/test-plan` when real testing is warranted.
+Before declaring anything done, run the fast syntax/build check for the stack in play (`pnpm build`(NEVER npm) , `cargo check`, `pytest --collect-only`, etc.) — this is a baseline sanity gate, not a substitute for `/create-test` & `/test` when real testing is warranted.
+

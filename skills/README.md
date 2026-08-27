@@ -1,6 +1,6 @@
 # Skills Library
 
-A collection of **24 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
+A collection of **25 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
 
 A skill in this repo is an executable standard operating procedure (SOP) that guides an AI agent through a specific engineering discipline — complete with discovery steps, human-in-the-loop checkpoints, and strict verification gates.
 
@@ -23,8 +23,10 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 | Perform an adversarial senior code review for scale and maintainability | `/review` |
 | Construct a test structurally capable of catching real failures | `/create-test` |
 | Run an iterative testing loop until code genuinely passes | `/test` |
+| Empirically prove a test catches regressions via deliberate fault injection | `/mutate` |
 | Clean up / decouple code with zero logic or behavior changes | `/refactor-clean` |
 | Re-architect subsystem logic while intentionally superseding old behavior | `/refactor-arch` |
+| Apply a simple mechanical rule or style check across a large surface | `/create-sprints` |
 | Apply an emergency surgical patch to a broken production system | `/hotfix` |
 | Investigate the root cause of a regression or unexpected bug | `/rca` |
 | Generate a curated, gated ground-truth dataset for fine-tuning/eval | `/create-dataset` |
@@ -51,15 +53,17 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 * [skills/create-loop/SKILL.md](create-loop/SKILL.md) — Autonomous loop skeleton with layers, sub-agents, gates, and scheduled check-ins.
 * [skills/build-vertical/SKILL.md](build-vertical/SKILL.md) — Vertical-slice execution methodology: builds a thin end-to-end trace across all layers first.
 
-### 3. 🔬 Review & Verification
+### 3. 🔬 Review, Testing & Verification
 * [skills/feedback-review/SKILL.md](feedback-review/SKILL.md) — Pre-implementation audit: checks proposals against real codebase reality to eliminate hallucinations.
 * [skills/review/SKILL.md](review/SKILL.md) — Adversarial senior code review hunting for complexity, scale breaks, and anti-patterns with drop-in replacements.
-* [skills/create-test/SKILL.md](create-test/SKILL.md) — Structural test design ensuring entrypoints, boundaries, and real conditions are tested before execution.
-* [skills/test/SKILL.md](test/SKILL.md) — Generic execution testing workflow looping until tests are genuinely passing with valid output analysis.
+* [skills/create-test/SKILL.md](create-test/SKILL.md) — Structural test design ensuring production entry seams, boundaries, and False-Green tables are designed before writing test code.
+* [skills/test/SKILL.md](test/SKILL.md) — Execution testing workflow looping until tests are genuinely passing with output inspection beyond exit code 0.
+* [skills/mutate/SKILL.md](mutate/SKILL.md) — Post-green mutation validation seeding deliberate defects into production code to empirically confirm the test catches them.
 
 ### 4. 🛠️ Execution & Refactoring
 * [skills/refactor-clean/SKILL.md](refactor-clean/SKILL.md) — Behavior-preserving refactor (cleanup, modularization, dead code removal, zero logic changes).
 * [skills/refactor-arch/SKILL.md](refactor-arch/SKILL.md) — Architecture-replacing refactor (new patterns and data flows superseding legacy logic).
+* [skills/create-sprints/SKILL.md](create-sprints/SKILL.md) — Sprint batching and persistent checklists for mechanical breadth tasks across many files.
 * [skills/hotfix/SKILL.md](hotfix/SKILL.md) — Abbreviated, surgical emergency fix for broken systems with mandatory rollback steps.
 
 ### 5. 🧠 Machine Learning & Evaluation

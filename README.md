@@ -13,16 +13,16 @@ Nothing in this repository is hardcoded to a single project or company product. 
 ai-duct-tape/
 ├── rules/         📜 Global invariants & operational constraints (Rule Zero, Blocker Escalation)
 ├── roles/         🎭 7 specialized agent personas with invariant boundaries and ownership rules
-├── skills/        ⚡ 24 structured workflows (/intent-alignment, /architect, /review, etc.)
-└── style-guides/  📐 Stack-specific & general engineering standards (Design, TS, Rust, Go, Python)
+├── skills/        ⚡ 25 structured workflows (/intent-alignment, /architect, /create-test, /mutate, etc.)
+└── style-guides/  📐 Stack-specific & cross-cutting engineering standards (General, Testing, Design, TS, Rust, Go, Python)
 ```
 
 | Pillar | Overview | Read More |
 |---|---|---|
 | **📜 Rules** | Universal constraints that govern every thread and model decision. Establishes Rule Zero (*Ask, Don't Assume*), the 2-Attempt blocker rule, and anti-hallucination policies. | [rules/README.md](rules/README.md) |
 | **🎭 Roles** | Deep personas (Backend, Frontend, Architect, ML Research, QA, Test) equipped with domain mindsets, boundary-leak alerts, and explicit anti-goals. | [roles/README.md](roles/README.md) |
-| **⚡ Skills** | 24 executable workflows triggered as slash commands (`/name`) that guide agents step-by-step through discovery, architecture, planning, refactoring, and review. | [skills/README.md](skills/README.md) |
-| **📐 Style Guides** | Strict coding, API, and design standards ensuring consistent, high-performance, and accessible code across languages and frameworks. | [style-guides/README.md](style-guides/README.md) |
+| **⚡ Skills** | 25 executable workflows triggered as slash commands (`/name`) that guide agents step-by-step through discovery, architecture, planning, refactoring, and review. | [skills/README.md](skills/README.md) |
+| **📐 Style Guides** | Strict coding, API, testing, and design standards ensuring consistent, high-performance, and accessible code across languages and frameworks. | [style-guides/README.md](style-guides/README.md) |
 
 ---
 
@@ -36,7 +36,7 @@ flowchart LR
     B --> C[📐 /architect & /create-spec]
     C --> D[📋 /create-plan]
     D --> E[🍰 /build-vertical]
-    E --> F[🧪 /create-test & /test]
+    E --> F[🧪 /create-test & /test & /mutate]
     F --> G[🔬 /review]
     G --> H[🤝 /handoff]
 ```
@@ -44,8 +44,8 @@ flowchart LR
 1. **Discovery & Alignment:** Pressure-test assumptions early (`/intent-alignment`, `/grill-me`).
 2. **Architecture & Specification:** Formulate behavioral specs (`/create-spec`) and architecture docs (`/architect`).
 3. **Phased Planning:** Draft detailed step-by-step execution plans (`/create-plan`, `/create-loop`).
-4. **Execution & Implementation:** Implement thin end-to-end traces across all layers (`/build-vertical`, `/refactor-clean`, `/hotfix`).
-5. **Rigorous Verification:** Construct structural tests and run iterative execution loops (`/create-test`, `/test`) along with adversarial senior code reviews (`/review`, `/feedback-review`).
+4. **Execution & Implementation:** Implement thin end-to-end traces across all layers (`/build-vertical`, `/refactor-clean`, `/hotfix`, `/create-sprints`).
+5. **Rigorous Verification:** Construct structural tests (`/create-test`), execute test loops (`/test`), and empirically validate with mutation testing (`/mutate`) along with adversarial senior code reviews (`/review`, `/feedback-review`).
 6. **Session Handoff:** Package state cleanly for the next thread (`/handoff`).
 
 ---
@@ -60,10 +60,11 @@ rules/global-rules.md            → .agents/rules/global-rules.md
 roles/*.md                       → .agents/rules/
 skills/*/SKILL.md                → .agents/skills/<skill-name>/SKILL.md
 style-guides/general.md          → .agents/rules/
+style-guides/testing.md          → .agents/rules/
 style-guides/design.md           → .agents/rules/
 style-guides/typescript-react.md → .agents/rules/
 style-guides/<backend-lang>.md   → .agents/rules/
-``` specialized agent personas with invariant boundaries and ownership rules
+```
 
 ### ⚙️ Backend-Only Microservice (Rust / Go / Python)
 ```bash
@@ -72,7 +73,9 @@ roles/backend-engineer.md        → .agents/rules/
 roles/system-architect.md        → .agents/rules/
 roles/qa-engineer.md             → .agents/rules/
 roles/test-engineer.md           → .agents/rules/
+skills/*/SKILL.md                → .agents/skills/<skill-name>/SKILL.md
 style-guides/general.md          → .agents/rules/
+style-guides/testing.md          → .agents/rules/
 style-guides/<language>.md       → .agents/rules/
 ```
 
@@ -81,9 +84,14 @@ style-guides/<language>.md       → .agents/rules/
 rules/global-rules.md            → .agents/rules/global-rules.md
 roles/ml-research-engineer.md    → .agents/rules/
 roles/qa-engineer.md             → .agents/rules/
+roles/test-engineer.md           → .agents/rules/
 skills/create-dataset/SKILL.md   → .agents/skills/create-dataset/SKILL.md
 skills/create-eval/SKILL.md      → .agents/skills/create-eval/SKILL.md
+skills/create-test/SKILL.md      → .agents/skills/create-test/SKILL.md
+skills/test/SKILL.md             → .agents/skills/test/SKILL.md
+skills/mutate/SKILL.md           → .agents/skills/mutate/SKILL.md
 style-guides/general.md          → .agents/rules/
+style-guides/testing.md          → .agents/rules/
 style-guides/python.md           → .agents/rules/
 ```
 
