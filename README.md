@@ -13,7 +13,7 @@ Nothing in this repository is hardcoded to a single project or company product. 
 ai-duct-tape/
 ├── rules/         📜 Global invariants & operational constraints (Rule Zero, Blocker Escalation)
 ├── roles/         🎭 7 specialized agent personas with invariant boundaries and ownership rules
-├── skills/        ⚡ 25 structured workflows (/intent-alignment, /architect, /create-test, /mutate, etc.)
+├── skills/        ⚡ 26 structured workflows (/intent-alignment, /architect, /create-test, /trace, etc.)
 └── style-guides/  📐 Stack-specific & cross-cutting engineering standards (General, Testing, Design, TS, Rust, Go, Python)
 ```
 
@@ -21,7 +21,7 @@ ai-duct-tape/
 |---|---|---|
 | **📜 Rules** | Universal constraints that govern every thread and model decision. Establishes Rule Zero (*Ask, Don't Assume*), the 2-Attempt blocker rule, and anti-hallucination policies. | [rules/README.md](rules/README.md) |
 | **🎭 Roles** | Deep personas (Backend, Frontend, Architect, ML Research, QA, Test) equipped with domain mindsets, boundary-leak alerts, and explicit anti-goals. | [roles/README.md](roles/README.md) |
-| **⚡ Skills** | 25 executable workflows triggered as slash commands (`/name`) that guide agents step-by-step through discovery, architecture, planning, refactoring, and review. | [skills/README.md](skills/README.md) |
+| **⚡ Skills** | 26 executable workflows triggered as slash commands (`/name`) that guide agents step-by-step through discovery, architecture, planning, refactoring, and review. | [skills/README.md](skills/README.md) |
 | **📐 Style Guides** | Strict coding, API, testing, and design standards ensuring consistent, high-performance, and accessible code across languages and frameworks. | [style-guides/README.md](style-guides/README.md) |
 
 ---

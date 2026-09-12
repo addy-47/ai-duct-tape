@@ -1,6 +1,7 @@
 ---
 name: build-vertical
 description: Enforce vertical-slice engineering by building a thin, working end-to-end trace across all layers (DB, backend, API, UI) before fleshing out individual components. Use when starting new features, greenfield services, or prototypes ("build a vertical slice", "thin end-to-end slice", "tracer bullet implementation").
+disable-model-invocation: true
 ---
 
 

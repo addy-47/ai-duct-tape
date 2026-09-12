@@ -24,6 +24,7 @@ THIRD_PARTY.md  Attribution for vendored/referenced external skills.
 | Testing, evals & mutation validation | `roles/test-engineer.md` + `style-guides/testing.md` + skills: `create-test`, `test`, `mutate` |
 | Verifying/reviewing evidence | `roles/qa-engineer.md` + skills: `review`, `feedback-review` |
 | Debugging a regression | skills: `rca` |
+| Tracing runtime control flow | skills: `trace` |
 | ML model/data work | `roles/ml-research-engineer.md` + skills: `create-dataset`, `create-eval` |
 | Refactoring & mechanical breadth | skills: `refactor-clean` (behavior-preserving), `refactor-arch` (behavior-changing), `create-sprints` (sprint batching) |
 | Emergency fix | skills: `hotfix` |

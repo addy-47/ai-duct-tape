@@ -1,6 +1,7 @@
 ---
 name: refactor-arch
 description: Re-architect subsystem logic, data structures, or patterns where legacy behavior is intentionally superseded. Manages controlled migration paths, deprecations, and boundary replacements. Trigger on "re-architect this subsystem", "migrate to new pattern", "replace legacy engine", or "structural overhaul".
+disable-model-invocation: true
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 name: create-eval
 description: Design and run rigorous evaluation harnesses for probabilistic, threshold-based, or LLM-judged systems. Measures failure distributions, boundary conditions, and precision/recall tradeoffs instead of shallow averages. Trigger on "build an eval for this prompt/model", "benchmark LLM outputs", "evaluate scoring model", or "design test metrics for AI pipeline".
+disable-model-invocation: true
 ---
 
 

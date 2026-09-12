@@ -1,6 +1,7 @@
 ---
 name: test
 description: Execute, read, and evaluate tests that have already been constructed. Loops through runs, reads output for silent wrongness beyond exit code 0, and escalates when the loop is no longer converging. Trigger on "run the tests", "verify test results", "debug failing test", or "execute test suite". Assumes /create-test discipline has already been applied.
+disable-model-invocation: true
 ---
 
 ## Step 0 — Confirm This Is Worth Running

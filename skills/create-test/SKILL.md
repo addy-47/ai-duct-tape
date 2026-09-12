@@ -1,6 +1,7 @@
 ---
 name: create-test
 description: Pre-implementation reasoning protocol for constructing tests that catch real production bugs. Stack- and project-agnostic. Traces the production path, verifies testability, and stress-tests for false-green paths before a line of test code is written. Trigger on "write a test for", "create test case", "design integration test", or "how should we test this component". Precedes /test and /mutate.
+disable-model-invocation: true
 ---
 
 A good test is a thin wire connecting a real production entry point to a real observable output, such that if anything on that wire broke — dropped data, wrong routing, skipped state transition — the test fails. A good test contains no logic of its own. It wires up production components, invokes the entry point, and reads the output.

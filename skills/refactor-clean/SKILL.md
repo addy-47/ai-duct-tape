@@ -1,6 +1,7 @@
 ---
 name: refactor-clean
 description: Refactor existing code while strictly preserving external behavior (zero logic changes). Handles decoupling, dead code removal, modularization, and file reorganization using Strangler Fig and CLI-first verification. Trigger on "clean up this file", "modularize this module", "decouple this class", "extract helper without changing behavior", or "safe refactor".
+disable-model-invocation: true
 ---
 
 

@@ -1,6 +1,8 @@
 ---
 name: validate
 description: Validate proposed technical changes, architectural pivots, tech stack swaps, third-party libraries, or design patterns before committing. Use when evaluating a migration, adding heavy dependencies, or adopting new patterns ("should we switch to X", "validate this architecture", "is library X better than Y"). For brand-new product/feature concepts, use /idea-validator.
+disable-model-invocation: true
+
 ---
 
 

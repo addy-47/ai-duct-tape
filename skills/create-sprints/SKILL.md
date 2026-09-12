@@ -1,4 +1,5 @@
 ---
+name: create-sprints
 description: Apply a simple, well-defined rule or change across a large number of files or instances. Not for complex or architecturally significant work — for tedious, mechanical breadth. Prevents premature "done" declarations via a persistent checklist and sprint batching.
 ---
 

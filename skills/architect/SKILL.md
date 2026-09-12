@@ -1,6 +1,7 @@
 ---
 name: architect
 description: Lead an iterative system design session producing High-Level (HLD) or Low-Level (LLD) architecture docs before formalizing into a spec. Trigger on "design a system for", "how should we architect", "let's design", "system architecture for X", "HLD/LLD for", or before writing specs for multi-component systems.
+disable-model-invocation: true
 ---
 
 

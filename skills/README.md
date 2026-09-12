@@ -1,6 +1,6 @@
 # Skills Library
 
-A collection of **25 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
+A collection of **26 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
 
 A skill in this repo is an executable standard operating procedure (SOP) that guides an AI agent through a specific engineering discipline — complete with discovery steps, human-in-the-loop checkpoints, and strict verification gates.
 
@@ -28,6 +28,7 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 | Re-architect subsystem logic while intentionally superseding old behavior | `/refactor-arch` |
 | Apply a simple mechanical rule or style check across a large surface | `/create-sprints` |
 | Apply an emergency surgical patch to a broken production system | `/hotfix` |
+| Reconstruct a runtime flow into a plain-English, citation-grounded walkthrough | `/trace` |
 | Investigate the root cause of a regression or unexpected bug | `/rca` |
 | Generate a curated, gated ground-truth dataset for fine-tuning/eval | `/create-dataset` |
 | Design a rigorous evaluation framework for probabilistic/scored AI systems | `/create-eval` |
@@ -71,6 +72,7 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 * [skills/create-eval/SKILL.md](create-eval/SKILL.md) — Robust evaluation harness design for probabilistic systems, LLM outputs, and scoring classifiers.
 
 ### 6. 🔍 Analysis, Ops & Handoff
+* [skills/trace/SKILL.md](trace/SKILL.md) — Faithful, plain-English reverse engineering of runtime call flows with explicit actors, triggers, citations, and zero opinions.
 * [skills/rca/SKILL.md](rca/SKILL.md) — Investigative root-cause analysis for regressions and outages.
 * [skills/report/SKILL.md](report/SKILL.md) — Generates formal written report artifacts with evidence and data flow analysis.
 * [skills/ask/SKILL.md](ask/SKILL.md) — Direct, unbloated answers with zero boilerplate or unwanted code sketches.

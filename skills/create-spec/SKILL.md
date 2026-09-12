@@ -1,6 +1,7 @@
 ---
 name: create-spec
 description: Create a language-agnostic behavioral specification defining strict invariants and contracts (what must be true, never how it's implemented). Use whenever writing requirements, API contracts, domain behaviors, or formal specs before implementation planning. Trigger on "write a spec for", "create specification", "define behavioral spec", or "formalize requirements".
+disable-model-invocation: true
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 name: ask
 description: Deliver a concise, direct answer to a technical question with zero extraneous boilerplate, unrequested code blocks, or unsolicited planning steps. Trigger on direct factual queries ("how does X work", "what is the difference between A and B", "explain concept X", "quick question").
+disable-model-invocation: true
 ---
 
 

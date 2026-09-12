@@ -1,6 +1,7 @@
 ---
 name: mutate
 description: Post-green validation protocol that empirically proves a test catches real regressions, rather than assuming it from reasoning alone. Seeds deliberate logical defects ("mutants") into production code, confirms the test suite goes red, then reverts and confirms green. Stack- and project-agnostic. Trigger on "validate this test", "how do I know this isn't a false green", "mutation test this", "prove this test catches bugs". Follows /create-test and /test — consumes the Phase 2b False-Green table as its input spec.
+disable-model-invocation: true
 ---
 
 A green test suite is a claim, not evidence. The only way to know a test actually fails when the logic it protects is broken is to break that logic on purpose and watch it fail. This skill turns the hypothetical false-green table from `/create-test` into real code edits and empirically confirms — or disproves — that the tests catch what they claim to catch.

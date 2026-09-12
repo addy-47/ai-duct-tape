@@ -1,6 +1,7 @@
 ---
 name: handoff
 description: Generate a structured handoff artifact consolidating thread context, open decisions, file changes, and next steps for resuming seamlessly in a new conversation session. Trigger on "prepare handoff", "wrap up this session", "summarize for new thread", or "create thread handover".
+disable-model-invocation: true
 ---
 
 

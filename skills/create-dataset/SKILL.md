@@ -1,6 +1,7 @@
 ---
 name: create-dataset
 description: Generate, audit, and quality-gate ground-truth datasets for model fine-tuning or evaluation. Implements deduplication, schema validation, and multi-layer micro-batch pipelines to prevent poisoned weights. Trigger on "build a training dataset", "generate ground truth pairs", "create eval dataset", or "curate fine-tuning data".
+disable-model-invocation: true
 ---
 
 

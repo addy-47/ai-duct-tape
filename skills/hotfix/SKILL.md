@@ -1,6 +1,7 @@
 ---
 name: hotfix
 description: Apply an emergency, surgical patch to restore a broken production or staging system with minimal blast radius and an immediate rollback plan. Trigger on "urgent fix", "hotfix this outage", "quick production patch", "emergency repair", or "broken build fix".
+disable-model-invocation: true
 ---
 
 

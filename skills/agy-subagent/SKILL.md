@@ -1,6 +1,7 @@
 ---
 name: agy-subagent
 description: Launch and orchestrate persistent, persona-based subagents via the agy CLI for isolated execution (QA, testing, adversarial review, frontend, ML research) inside the Antigravity IDE. Use when a task benefits from a separate context window, scoped tool permissions, or long-running subagent tasks. Trigger on "spawn subagent", "launch agy worker", "run in background subagent", or "delegate to persona subagent".
+disable-model-invocation: true
 ---
 
 
