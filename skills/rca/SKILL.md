@@ -1,71 +1,58 @@
 ---
 name: rca
-description: Perform a structured root cause analysis (RCA) on bugs, test regressions, flakes, or production incidents before proposing fixes. Gathers symptoms, reproduces issues, traces failure paths, and isolates causes. Trigger on "why did this fail", "investigate this regression", "RCA on this error", "diagnose this flake", or "trace this bug".
+description: Perform a structured root cause analysis on bugs, test regressions, flakes, or production incidents, and propose a fix scaled to what's actually found. Trigger on "why did this fail", "investigate this regression", "RCA on this error", "diagnose this flake", or "trace this bug".
 ---
 
+# RCA
 
-Read everything in context:
-- What broke or regressed
-- Any error output, logs, or symptoms provided
-- The implementation plan and recent changes if available
+Read everything in context: what broke, error output/logs, the implementation plan and recent changes if available.
 
-Do NOT attempt a fix yet. Do NOT suggest solutions yet.
+Do not propose a fix before Step 3 classifies the problem. Do not reason from memory alone if the codebase can be checked directly — grep, logs, actual execution path.
 
-## Step 1 — Symptom Definition
+## Step 1 — Symptom
 
-State precisely:
-- What is the observed behavior
-- What was the expected behavior
-- When did it start — after which change, deploy, or event if known
-- Is it consistent or intermittent
+State precisely: observed vs. expected behavior, when it started (which change/deploy/event, if known), consistent or intermittent. If any of this can't be answered from context, stop and ask before continuing — don't guess at a timeline or trigger.
 
-If any of these cannot be answered from context, stop and ask before continuing.
+## Step 2 — Trace
 
-## Step 2 — Investigation
+Start at the symptom, not a hypothesis. Follow the actual execution path, not the intended one. At each step: could this be the source, or a consequence? Flag explicitly where your confidence drops.
 
-Trace backwards from the symptom:
-- What code paths are involved
-- What changed recently that touches those paths
-- What assumptions in the code could be violated to produce this symptom
-- What external factors could cause this (env, config, dependency version, data shape)
+## Step 3 — Classify
 
-**Internal reasoning before writing:**
-- Start at the symptom, not at a hypothesis
-- Follow the actual execution path — not the intended one
-- At each step ask: could this be the source, or is this a consequence?
-- Identify where your confidence drops — flag those points explicitly
+This determines everything that follows — get it right before writing the report.
 
-Use grep, log analysis, or any available tooling to verify — do not reason from memory alone if the codebase can be checked directly.
+| Class | What it means | What happens next |
+|---|---|---|
+| **Trivial** | Localized, obvious cause, no design implication (typo, off-by-one, bad default) | Root cause + fix in the same response. No stop. |
+| **Contained** | Clear cause within one function/module, fix doesn't touch shared contracts | Root cause + fix in the same response, fix clearly marked, proceed unless user objects. |
+| **Systemic** | Crosses module/service boundaries, violates an assumed invariant, or the fix could ripple | Root cause only. Stop. Wait for confirmation before proposing a fix. |
+| **Environmental** | External to the code (config, infra, dependency version, data shape) | Root cause only, plus what to check/change outside the codebase. Stop if the fix requires access or changes you can't verify yourself. |
+| **Confidence < 80%** | Regardless of the above | Always stop, regardless of class. State what information would close the gap. |
 
-## Step 3 — Root Cause Report
+## Step 4 — Report
 
 ### Symptom
 What broke, exactly.
 
 ### Root Cause
-What actually caused it. One clear statement.
-If multiple contributing causes, rank them.
+One clear statement. If multiple contributing causes, rank them.
+
+### Classification
+Which class from Step 3, and why — one line.
 
 ### Why It Wasn't Caught
-- What test, validation, or assumption was missing that allowed this to reach the point of failure
+Only if there's a real gap (missing test, missing validation, bad assumption). If nothing was actually missing — say so, don't invent one for the sake of the section.
 
 ### Confidence
-Score 0–100%. If below 80%, state what additional information would close the gap.
+0–100%. If below 80%, this already triggered a stop above — say what's needed to close the gap.
 
-
-Stop here. Present the report and wait for confirmation before proposing any fix.
-
-
-## Step 4 — Fix Proposal (only after approval)
-
+### Fix (Trivial / Contained only — inline here)
 - Proposed fix — surgical, minimal
 - Files and lines affected
-- Why this fix addresses the root cause and not just the symptom
-- Regression risk — what else could this touch
-- How to verify the fix worked — specific command or observable outcome
+- Why this addresses the root cause, not the symptom
+- Regression risk
+- How to verify — specific command or observable outcome
 
-## Step 5 — Prevention
+## Step 5 — Prevention (after fix confirmed working, if warranted)
 
-After fix is confirmed working:
-- What should be added (test, validation, guard) to prevent recurrence
-- Update the implementation plan or delta-log if this occurred during an active refactor or implementation
+What should be added (test, validation, guard) to prevent recurrence. Skip this section entirely if there's genuinely nothing worth adding — don't pad it.

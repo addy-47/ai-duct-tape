@@ -34,29 +34,6 @@ State the inferred type before writing. If genuinely ambiguous, ask one question
 - Written for a reader with basic technical literacy, not a developer mindset. A product manager or project manager should be able to read this and understand exactly what correct looks like, without needing to know how it's built.
 - Concrete and testable — vague statements like "should be secure" are not acceptable. State the actual observable condition: "a request without a valid token must be rejected with an unauthorized result."
 
-### Structure (adapt to spec type, but always include)
-
-**Name & Concept**
-One sentence — what single concept this spec governs.
-
-**Purpose**
-Why this exists, in plain terms. What problem it solves for the user or system.
-
-**Must Be True**
-The core contract. Every statement here must be independently verifiable regardless of implementation language.
-- Numbered, concrete, testable statements
-- Cover the expected/happy path first, then edge cases, then failure conditions
-
-**Must Not Happen**
-Explicit negative constraints — things that would violate this spec even if they weren't caught by the "must be true" list.
-
-**Out of Scope**
-What this spec deliberately does not cover — especially anything a reader might assume is included. Point to the sibling spec if one exists or should exist.
-
-**Open Questions**
-Anything genuinely undecided that needs a decision before this spec is considered final.
-
-
 ## Step 3 — Save
 
 Save to `specs/[name]-spec.md` using a clear, concept-scoped filename (e.g. `specs/auth-spec.md`, `specs/architecture-spec.md`).
