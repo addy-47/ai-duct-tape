@@ -1,7 +1,6 @@
 ---
 name: intent-alignment
 description: Align on shape and process before any exploration or execution begins. Use whenever starting a new feature, workflow, or task where the process itself needs to be agreed — before reading files, before planning, before touching tools. Trigger on "let's build X", "help me do Y", "I want a workflow for Z", or any request where jumping straight to exploration would waste tokens on a shape that turns out wrong.
-disable-model-invocation: true
 ---
 
 # Intent Alignment

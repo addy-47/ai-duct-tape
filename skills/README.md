@@ -1,6 +1,6 @@
 # Skills Library
 
-A collection of **29 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
+A collection of **25 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
 
 A skill in this repo is an executable standard operating procedure (SOP) that guides an AI agent through a specific engineering discipline — complete with discovery steps, human-in-the-loop checkpoints, and strict verification gates.
 
@@ -18,14 +18,11 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 | Break architecture down into a step-by-step phased execution plan | `/create-plan` |
 | Adjust an existing implementation plan mid-thread | `/modify-plan` |
 | Build an autonomous loop skeleton with multi-phase agent checkpoints | `/create-loop` |
-| Implement a thin end-to-end slice across all layers before going deep | `/build-vertical` |
 | Audit a plan or bug report against the actual code before touching anything | `/feedback-review` |
 | Perform an adversarial senior code review for scale and maintainability | `/review` |
 | Construct a test structurally capable of catching real failures | `/create-test` |
 | Run an iterative testing loop until code genuinely passes | `/test` |
 | Empirically prove a test catches regressions via deliberate fault injection | `/mutate` |
-| Clean up / decouple code with zero logic or behavior changes | `/refactor-clean` |
-| Re-architect subsystem logic while intentionally superseding old behavior | `/refactor-arch` |
 | Apply a simple mechanical rule or style check across a large surface | `/create-sprints` |
 | Apply an emergency surgical patch to a broken production system | `/hotfix` |
 | Steer the agent while it writes or fixes code after a plan exists | `/implement` |
@@ -35,7 +32,6 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 | Generate a curated, gated ground-truth dataset for fine-tuning/eval | `/create-dataset` |
 | Design a rigorous evaluation framework for probabilistic/scored AI systems | `/create-eval` |
 | Write a comprehensive evidence-based report or state analysis artifact | `/report` |
-| Get a concise, direct answer to a question without code or plans | `/ask` |
 | Summarize context and produce a structured handover for the next thread | `/handoff` |
 | Run a retrospective on a coding session to improve future runs | `/retro` |
 | Spin up isolated, persona-based subagents in Antigravity | `/agy-subagent` ⚠️ |
@@ -55,7 +51,6 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 * [skills/create-plan/SKILL.md](create-plan/SKILL.md) — Phased implementation planning (Phase 1 planned in detail; later phases kept high-level).
 * [skills/modify-plan/SKILL.md](modify-plan/SKILL.md) — Mid-thread adaptation of active implementation plans in response to discoveries.
 * [skills/create-loop/SKILL.md](create-loop/SKILL.md) — Autonomous loop skeleton with layers, sub-agents, gates, and scheduled check-ins.
-* [skills/build-vertical/SKILL.md](build-vertical/SKILL.md) — Vertical-slice execution methodology: builds a thin end-to-end trace across all layers first.
 
 ### 3. 🔬 Review, Testing & Verification
 * [skills/feedback-review/SKILL.md](feedback-review/SKILL.md) — Pre-implementation audit: checks proposals against real codebase reality to eliminate hallucinations.
@@ -65,8 +60,6 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 * [skills/mutate/SKILL.md](mutate/SKILL.md) — Post-green mutation validation seeding deliberate defects into production code to empirically confirm the test catches them.
 
 ### 4. 🛠️ Execution & Refactoring
-* [skills/refactor-clean/SKILL.md](refactor-clean/SKILL.md) — Behavior-preserving refactor (cleanup, modularization, dead code removal, zero logic changes).
-* [skills/refactor-arch/SKILL.md](refactor-arch/SKILL.md) — Architecture-replacing refactor (new patterns and data flows superseding legacy logic).
 * [skills/create-sprints/SKILL.md](create-sprints/SKILL.md) — Sprint batching and persistent checklists for mechanical breadth tasks across many files.
 * [skills/hotfix/SKILL.md](hotfix/SKILL.md) — Abbreviated, surgical emergency fix for broken systems with mandatory rollback steps.
 * [skills/implement/SKILL.md](implement/SKILL.md) — Implementation steering: task sizing, evidence-first execution, and verified steps while writing or fixing code.
@@ -79,7 +72,6 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 * [skills/trace/SKILL.md](trace/SKILL.md) — Faithful, plain-English reverse engineering of runtime call flows with explicit actors, triggers, citations, and zero opinions.
 * [skills/rca/SKILL.md](rca/SKILL.md) — Investigative root-cause analysis for regressions and outages.
 * [skills/report/SKILL.md](report/SKILL.md) — Generates formal written report artifacts with evidence and data flow analysis.
-* [skills/ask/SKILL.md](ask/SKILL.md) — Direct, unbloated answers with zero boilerplate or unwanted code sketches.
 * [skills/handoff/SKILL.md](handoff/SKILL.md) — End-of-thread context consolidation and structured prompt for resuming in a fresh session.
 * [skills/agy-subagent/SKILL.md](agy-subagent/SKILL.md) ⚠️ — Antigravity CLI orchestration for launching dedicated subagents in separate sessions.
 * [skills/create-tickets/SKILL.md](create-tickets/SKILL.md) — Break a plan, spec, or conversation into tracer-bullet tickets with blocking edges, published to a tracker.

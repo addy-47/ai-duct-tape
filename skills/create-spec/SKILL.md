@@ -1,7 +1,6 @@
 ---
 name: create-spec
 description: Create a behavioral specification: the contracts, invariants, and design decisions for a capability, written before planning. Use whenever writing requirements, API contracts, domain behaviors, or formal specs. Trigger on "write a spec for", "create specification", "define behavioral spec", or "formalize requirements".
-disable-model-invocation: true
 ---
 
 A spec is the contract a plan gets built against. It says what must be true and why, so the planner can choose the code that satisfies it. Code changes weekly; a good spec survives renames, refactors, and minor version bumps unchanged.

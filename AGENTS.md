@@ -46,7 +46,7 @@ done
 | Debugging a regression | skills: `rca` |
 | Tracing runtime control flow | skills: `trace` |
 | ML model/data work | `roles/ml-research-engineer.md` + skills: `create-dataset`, `create-eval` |
-| Refactoring & mechanical breadth | skills: `refactor-clean` (behavior-preserving), `refactor-arch` (behavior-changing), `create-sprints` (sprint batching) |
+| Code changes & mechanical breadth | skills: `implement`, `create-sprints` (sprint batching) |
 | Emergency fix | skills: `hotfix` |
 | Stress-testing a plan/idea | skills: `grill-me` |
 | Ending a thread / new thread | skills: `handoff` |

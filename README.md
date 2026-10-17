@@ -13,7 +13,7 @@ Nothing in this repository is hardcoded to a single project or company product. 
 ai-duct-tape/
 ├── rules/         📜 Global invariants & operational constraints (Rule Zero, Blocker Escalation)
 ├── roles/         🎭 7 specialized agent personas with invariant boundaries and ownership rules
-├── skills/        ⚡ 26 structured workflows (/intent-alignment, /architect, /create-test, /trace, etc.)
+├── skills/        ⚡ 25 structured workflows (/intent-alignment, /architect, /create-test, /trace, etc.)
 └── style-guides/  📐 Stack-specific & cross-cutting engineering standards (General, Testing, Design, TS, Rust, Go, Python)
 ```
 
@@ -21,7 +21,7 @@ ai-duct-tape/
 |---|---|---|
 | **📜 Rules** | Universal constraints that govern every thread and model decision. Establishes Rule Zero (*Ask, Don't Assume*), the 2-Attempt blocker rule, and anti-hallucination policies. | [rules/README.md](rules/README.md) |
 | **🎭 Roles** | Deep personas (Backend, Frontend, Architect, ML Research, QA, Test) equipped with domain mindsets, boundary-leak alerts, and explicit anti-goals. | [roles/README.md](roles/README.md) |
-| **⚡ Skills** | 26 executable workflows triggered as slash commands (`/name`) that guide agents step-by-step through discovery, architecture, planning, refactoring, and review. | [skills/README.md](skills/README.md) |
+| **⚡ Skills** | 25 executable workflows triggered as slash commands (`/name`) that guide agents step-by-step through discovery, architecture, planning, and review. | [skills/README.md](skills/README.md) |
 | **📐 Style Guides** | Strict coding, API, testing, and design standards ensuring consistent, high-performance, and accessible code across languages and frameworks. | [style-guides/README.md](style-guides/README.md) |
 
 ---
@@ -35,7 +35,7 @@ flowchart LR
     A[💡 Idea / Request] --> B[🎯 /intent-alignment]
     B --> C[📐 /architect & /create-spec]
     C --> D[📋 /create-plan]
-    D --> E[🍰 /build-vertical]
+    D --> E[🛠️ /implement]
     E --> F[🧪 /create-test & /test & /mutate]
     F --> G[🔬 /review]
     G --> H[🤝 /handoff]
@@ -44,7 +44,7 @@ flowchart LR
 1. **Discovery & Alignment:** Pressure-test assumptions early (`/intent-alignment`, `/grill-me`).
 2. **Architecture & Specification:** Formulate behavioral specs (`/create-spec`) and architecture docs (`/architect`).
 3. **Phased Planning:** Draft detailed step-by-step execution plans (`/create-plan`, `/create-loop`).
-4. **Execution & Implementation:** Implement thin end-to-end traces across all layers (`/build-vertical`, `/refactor-clean`, `/hotfix`, `/create-sprints`).
+4. **Execution & Implementation:** Implement changes (`/implement`, `/hotfix`, `/create-sprints`).
 5. **Rigorous Verification:** Construct structural tests (`/create-test`), execute test loops (`/test`), and empirically validate with mutation testing (`/mutate`) along with adversarial senior code reviews (`/review`, `/feedback-review`).
 6. **Session Handoff:** Package state cleanly for the next thread (`/handoff`).
 
