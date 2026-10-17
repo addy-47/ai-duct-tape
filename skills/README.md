@@ -1,6 +1,6 @@
 # Skills Library
 
-A collection of **26 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
+A collection of **29 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
 
 A skill in this repo is an executable standard operating procedure (SOP) that guides an AI agent through a specific engineering discipline — complete with discovery steps, human-in-the-loop checkpoints, and strict verification gates.
 
@@ -28,6 +28,8 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 | Re-architect subsystem logic while intentionally superseding old behavior | `/refactor-arch` |
 | Apply a simple mechanical rule or style check across a large surface | `/create-sprints` |
 | Apply an emergency surgical patch to a broken production system | `/hotfix` |
+| Steer the agent while it writes or fixes code after a plan exists | `/implement` |
+| Break a plan or conversation into tickets with blocking edges | `/create-tickets` |
 | Reconstruct a runtime flow into a plain-English, citation-grounded walkthrough | `/trace` |
 | Investigate the root cause of a regression or unexpected bug | `/rca` |
 | Generate a curated, gated ground-truth dataset for fine-tuning/eval | `/create-dataset` |
@@ -35,6 +37,7 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 | Write a comprehensive evidence-based report or state analysis artifact | `/report` |
 | Get a concise, direct answer to a question without code or plans | `/ask` |
 | Summarize context and produce a structured handover for the next thread | `/handoff` |
+| Run a retrospective on a coding session to improve future runs | `/retro` |
 | Spin up isolated, persona-based subagents in Antigravity | `/agy-subagent` ⚠️ |
 
 ---
@@ -66,6 +69,7 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 * [skills/refactor-arch/SKILL.md](refactor-arch/SKILL.md) — Architecture-replacing refactor (new patterns and data flows superseding legacy logic).
 * [skills/create-sprints/SKILL.md](create-sprints/SKILL.md) — Sprint batching and persistent checklists for mechanical breadth tasks across many files.
 * [skills/hotfix/SKILL.md](hotfix/SKILL.md) — Abbreviated, surgical emergency fix for broken systems with mandatory rollback steps.
+* [skills/implement/SKILL.md](implement/SKILL.md) — Implementation steering: task sizing, evidence-first execution, and verified steps while writing or fixing code.
 
 ### 5. 🧠 Machine Learning & Evaluation
 * [skills/create-dataset/SKILL.md](create-dataset/SKILL.md) — Ground-truth dataset creation with auditing, deduplication, and quality gating.
@@ -78,6 +82,8 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 * [skills/ask/SKILL.md](ask/SKILL.md) — Direct, unbloated answers with zero boilerplate or unwanted code sketches.
 * [skills/handoff/SKILL.md](handoff/SKILL.md) — End-of-thread context consolidation and structured prompt for resuming in a fresh session.
 * [skills/agy-subagent/SKILL.md](agy-subagent/SKILL.md) ⚠️ — Antigravity CLI orchestration for launching dedicated subagents in separate sessions.
+* [skills/create-tickets/SKILL.md](create-tickets/SKILL.md) — Break a plan, spec, or conversation into tracer-bullet tickets with blocking edges, published to a tracker.
+* [skills/retro/SKILL.md](retro/SKILL.md) — Retrospective on a coding session: environment improvements for future runs.
 
 ---
 
@@ -88,6 +94,7 @@ Skills are formatted according to the universal Agent Skills standard: a directo
 | Agent Host | Target Destination |
 |---|---|
 | **Antigravity** | `.agents/skills/<skill-name>/SKILL.md` |
+| **Gemini / Antigravity (home)** | `~/.gemini/config/skills/<skill-name>` |
 | **OpenCode (Project)** | `.opencode/skills/<skill-name>/SKILL.md` |
 | **OpenCode (Global)** | `~/.config/opencode/skills/<skill-name>/SKILL.md` |
 | **Claude Code** | `.claude/skills/<skill-name>/SKILL.md` |
