@@ -5,7 +5,7 @@ description: Execute, steer, and monitor autonomous subagent loops, lifecycle st
 
 # Subagent Orchestration & Lifecycle Steering
 
-This skill governs the **execution and real-time steering** of subagent loops. While `/create-loop` designs the skeleton (milestones, layers, and sign-off gates), `/orchestrate` governs the runtime mechanics: subagent spawning, boundary delegation, dynamic cron monitoring, tool economy enforcement, mutation testing sandboxing, and adversarial sign-off.
+This skill governs the **execution and real-time steering** of subagent loops. While `/create-loop` designs the skeleton (milestones, layers, and sign-off gates), `/orchestrate` governs the runtime mechanics: subagent spawning, boundary delegation, dynamic cron monitoring, tool economy enforcement, and adversarial sign-off gates. Mutation testing mechanics belong exclusively to the Test Engineer (`/mutate`).
 
 ---
 
@@ -126,20 +126,7 @@ The orchestrator must strictly enforce the following execution rules across all 
 
 ---
 
-## 6. Mutation Testing Sandboxing & Parallelization
-
-Mutation testing must prove that tests catch real regressions without stalling the primary development workspace:
-
-1. **No Sequential Recompile Loops on Main Workspace**:
-   Never allow a subagent to sequentially seed, compile in `--release`, test, revert, and recompile 8 mutants on the primary working tree (costs 1+ hour of lock contention).
-2. **Sandboxing Options**:
-   - **Multi-Worktree Sharding**: Seed independent mutants in temporary git worktrees (`git worktree add /tmp/mutant-1`) so builds execute in parallel.
-   - **Simultaneous Non-Overlapping Mutants**: Seed non-overlapping mutants across separate modules (e.g. one in `guardrails.rs`, one in `truncation.rs`, one in `chassis.rs`) and verify all corresponding seam subtests fail in a single compile-and-test pass.
-   - **Remote Server Offloading**: Clone the branch to the remote GPU/build server (`temp/server.txt`) and execute the mutation campaign in the background while the local agent continues other work.
-
----
-
-## 7. Adversarial Reviewer as Independent Blocking Gate
+## 6. Adversarial Reviewer as Independent Blocking Gate
 
 The Reviewer subagent is the final quality gate before milestone completion:
 - **Independent Context**: The Reviewer must be an independent subagent with fresh eyes, having zero prior conversational involvement with the implementation subagent.
