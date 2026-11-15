@@ -1,7 +1,7 @@
 ---
 name: create-loop
 description: Build an autonomous orchestration loop skeleton defining milestone goals, phase checkpoints, subagent roles, scheduled check-ins, and human sign-off gates. Use when setting up long-running autonomous workflows, batch pipelines, or unattended agent loops ("set up an agent loop for", "create loop skeleton", "orchestrate long-running run").
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 
@@ -97,6 +97,7 @@ Only if the run is long enough to warrant unattended monitoring. Define as a rec
 Present the full skeleton. Wait for approval.
 
 Once approved:
+- Execute the loop using `/orchestrate`. `/orchestrate` steers runtime subagent delegation, enforces anti-spoon-feeding, calibrates proactive cron check-ins, and governs mutation sandboxing.
 - Layer 1, Phase 1 gets detailed via `/create-plan`, using this skeleton's definition as its scope
 - As the loop reaches each subsequent phase, `/create-plan` or `/modify-plan` details it based on what the previous phase actually produced — never plan phases far ahead in detail
 - Sub-agent gate failures trigger `/modify-plan` on the phase being repeated, incorporating what the failing sub-agent's report actually found — not a blind retry

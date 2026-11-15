@@ -68,6 +68,8 @@ After one failed fix, or two focused attempts, or three tool calls with no new i
 
 ## 7. Move in verified increments
 Change one logical unit, run the fastest relevant check, then continue; unverified edits don't stack. Read large sections at once, search once, then act.
+- **Batch First, Compile Once:** In compiled languages (Rust, C++, Go), a "logical unit" is the complete phase or batch across its interrelated files. Never run incremental compilations per file or per line edit. Batch the full unit first, then invoke the compiler once.
+- **Test Runner Economy:** Run the target test suite or binary in a single command. Never loop individual subtests sequentially.
 Keep validation, error handling, security, and accessibility at any size.
 If reality contradicts the plan or spec, report the mismatch before adapting.
 
