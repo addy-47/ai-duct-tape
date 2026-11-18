@@ -9,6 +9,7 @@ GLOBAL_RULES.md Global rules — defaults that apply to every project, every thr
 roles/          Role definitions — agent personas (backend, frontend, architect, ML, QA, test).
 skills/         Workflows — named procedures referenced as /<skill-name>.
 style-guides/   Per-language & cross-cutting engineering standards (general, testing, design, rust, ts, etc.).
+recipes/        Recipes — end-to-end task guides for one specific tech problem (how to build and debug it).
 THIRD_PARTY.md  Attribution for vendored/referenced external skills.
 ```
 

@@ -1,6 +1,6 @@
 # Skills Library
 
-A collection of **25 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
+A collection of **26 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
 
 A skill in this repo is an executable standard operating procedure (SOP) that guides an AI agent through a specific engineering discipline — complete with discovery steps, human-in-the-loop checkpoints, and strict verification gates.
 
@@ -32,6 +32,7 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 | Generate a curated, gated ground-truth dataset for fine-tuning/eval | `/create-dataset` |
 | Design a rigorous evaluation framework for probabilistic/scored AI systems | `/create-eval` |
 | Write a comprehensive evidence-based report or state analysis artifact | `/report` |
+| Write or improve skills and other documents agents consume | `/writing-for-agents` |
 | Summarize context and produce a structured handover for the next thread | `/handoff` |
 | Run a retrospective on a coding session to improve future runs | `/retro` |
 | Spin up isolated, persona-based subagents in Antigravity | `/agy-subagent` ⚠️ |
@@ -72,6 +73,7 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 * [skills/trace/SKILL.md](trace/SKILL.md) — Faithful, plain-English reverse engineering of runtime call flows with explicit actors, triggers, citations, and zero opinions.
 * [skills/rca/SKILL.md](rca/SKILL.md) — Investigative root-cause analysis for regressions and outages.
 * [skills/report/SKILL.md](report/SKILL.md) — Generates formal written report artifacts with evidence and data flow analysis.
+* [skills/writing-for-agents/SKILL.md](writing-for-agents/SKILL.md) — Guidance for writing skills, agent instructions, and other documents agents consume.
 * [skills/handoff/SKILL.md](handoff/SKILL.md) — End-of-thread context consolidation and structured prompt for resuming in a fresh session.
 * [skills/agy-subagent/SKILL.md](agy-subagent/SKILL.md) ⚠️ — Antigravity CLI orchestration for launching dedicated subagents in separate sessions.
 * [skills/create-tickets/SKILL.md](create-tickets/SKILL.md) — Break a plan, spec, or conversation into tracer-bullet tickets with blocking edges, published to a tracker.
