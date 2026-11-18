@@ -26,7 +26,7 @@ Roles map 1:1 to files in `.agents/rules/` of the consuming project (in this rep
 | Backend Engineer | `backend-engineer.md` | Write-capable | `rca`, `review`, `grill-me` |
 | Frontend Engineer | `frontend-engineer.md` | Write-capable | `impeccable`, `intent-alignment`, `grill-me`, `review` |
 | ML Research Engineer | `ml-research-engineer.md` | Write-capable, limited to data/eval artifacts — not production backend code | `feedback-review`, `create-dataset`, `create-eval`, `create-plan`, `create-loop` |
-| Test Engineer | `test-engineer.md` | Write-capable — writes tests, runs harnesses | `create-test`, `test`, `rca` |
+| Test Engineer | `test-engineer.md` | Write-capable — writes tests, runs harnesses | `create-test`, `qa`, `rca` |
 | QA Engineer | `qa-engineer.md` | Read-only / sandboxed — never writes or executes tests | `review`, `rca`, `agy-subagent` (for batch-scaling large audits — see §5) |
 
 **Open item, not yet solved:** neither this skill nor `agy` itself currently confirms a granular read-only execution flag — only the binary `--dangerously-skip-permissions` exists. Until a scoped flag is confirmed, "read-only" roles (System Architect, QA) are enforced by their own role file's invariants, not by OS-level sandboxing. Treat this as a real limitation, not a solved constraint — don't assume write access is actually blocked for these roles just because the table says "read-only."

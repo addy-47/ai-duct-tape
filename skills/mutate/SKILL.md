@@ -1,6 +1,6 @@
 ---
 name: mutate
-description: Post-green validation protocol that empirically proves a test catches real regressions, rather than assuming it from reasoning alone. Seeds deliberate logical defects ("mutants") into production code, confirms the test suite goes red, then reverts and confirms green. Stack- and project-agnostic. Trigger on "validate this test", "how do I know this isn't a false green", "mutation test this", "prove this test catches bugs". Follows /create-test and /test — consumes the Phase 2b False-Green table as its input spec.
+description: Post-green validation protocol that empirically proves a test catches real regressions, rather than assuming it from reasoning alone. Seeds deliberate logical defects ("mutants") into production code, confirms the test suite goes red, then reverts and confirms green. Stack- and project-agnostic. Trigger on "validate this test", "how do I know this isn't a false green", "mutation test this", "prove this test catches bugs". Follows /create-test and /qa — consumes the Phase 2b False-Green table as its input spec.
 
 ---
 
@@ -17,13 +17,15 @@ This is a known, established technique called **mutation testing**. A deliberate
 
 ## Precondition
 
-This skill requires a test that has already passed `/create-test`'s Phase 4 circuit breaker and is currently green under `/test`. Its Phase 2b False-Green table is the mutant source list. If no such table exists, go generate one first — do not invent mutants from nothing; that produces exactly the kind of shallow, disconnected fault-injection this skill exists to avoid.
+This skill requires a test that has already passed `/create-test`'s Phase 4 circuit breaker and is currently green under `/qa`. Its Phase 2b False-Green table is the mutant source list. If no such table exists, go generate one first — do not invent mutants from nothing; that produces exactly the kind of shallow, disconnected fault-injection this skill exists to avoid.
+
+**Interface:** if the test's intent block carries a `MUTANT` line, that line is the pre-written edit for its row. Use it directly as the one-line mutation.
 
 ---
 
-## Mutant Taxonomy — the shallow/logical distinction
+## Mutant Taxonomy — named categories
 
-**Discard these — they are not valid mutants for this protocol:**
+**Discard these — stillborn / trivial mutants:**
 - Panics, unwraps-on-none, `todo!()`/`NotImplementedError`, type errors, missing parameters, compile failures.
 - These crash loudly. Virtually any test harness catches a crash. Killing one tells you nothing about whether the test observes the *right* thing — only that the process didn't explode. If a False-Green row would only produce this kind of mutant, rewrite the row until it describes silent wrong behavior instead.
 
@@ -38,6 +40,8 @@ This skill requires a test that has already passed `/create-test`'s Phase 4 circ
 | Priority/ordering inversion | A comparison or sequence used for conflict/priority resolution is reversed | `if incoming_priority <= matched_priority` → `>=` |
 | Default/early-return fallback | A computed value is replaced with a hardcoded default | A classifier always returns its fallback category instead of the computed one |
 
+The first four categories are the standard mutation operators under other names: statement deletion, relational operator replacement, negate conditionals, and return-value replacement. Routing swap and priority inversion are domain-specific — they encode a system's own topology and conflict rules. That is where manual Tier 1 beats an automated Tier 2 tool, and worth stating when you choose a mutant.
+
 The governing rule for picking mutants: **each row in the False-Green table should map to exactly one of these categories.** If you can't map a row to one, the row was too vague to begin with — go back and make it a concrete one-line code change before running this skill.
 
 ---
@@ -51,12 +55,15 @@ Pull mutants directly from the seam's False-Green table — at minimum one mutan
 Make the single surgical edit in production code. One mutant at a time — never stack multiple mutations before testing, or you can't attribute a result to a specific defect.
 
 ### 3. Assert RED
-Run **only** the target test file/module for that seam — never the full suite — using the project's normal test invocation, at production-equivalent build settings if the project distinguishes them (e.g. an optimized/release build, if debug builds behave meaningfully differently). Record which specific assertion failed and why.
+Run the target test for that seam using the project's normal invocation, at production-equivalent build settings if the project distinguishes them (e.g. an optimized/release build, if debug builds behave meaningfully differently). Record which specific assertion failed and why. Scope is defined once in "Cost & Scope Discipline" below.
 
-- **Failed as predicted → mutant killed.** Move to step 4.
+**Only a failure on the predicted assertion counts as a kill.** A build error, setup crash, timeout, or flake is not a kill — it invalidates the run. Fix the run and re-execute before drawing any conclusion. This is the shallow-mutant problem returning through the test side.
+
+- **Failed on the predicted assertion → mutant killed.** Move to step 4.
+- **Red for an unrelated reason → invalid run.** Repair the environment or test, then re-run this same mutant.
 - **Passed → SURVIVOR.** This is a defect finding, not a shrug. Two possible resolutions, in order of likelihood:
   1. The test's assertion is too weak or checking the wrong thing — strengthen it, then re-run this same mutant to confirm it now kills it.
-  2. The mutant is behaviorally equivalent to correct production code for this particular test's inputs (rare) — document why, and discard it from the mutant count rather than silently dropping it.
+  2. The mutant is an **equivalent mutant** — behaviorally identical to correct production code for this particular test's inputs (rare) — document why, and discard it from the mutant count rather than silently dropping it.
 
 ### 4. Revert & Assert GREEN
 Undo the exact edit. Confirm the diff against version control is empty (e.g. `git diff --stat` clean, or your VCS's equivalent) before re-running the target test file and confirming it returns to full green. Do not proceed to the next mutant on top of an unreverted one — a poisoned baseline invalidates every subsequent result.
@@ -88,10 +95,7 @@ Mutation loops multiply test runtime by mutant count. Scope every run tightly:
 
 **Tier 1 — Primary, mandatory:** the manual, False-Green-table-derived mutants above. These are targeted at logic you already identified as load-bearing; they are cheap relative to their signal and directly answer "does this specific test catch this specific defect."
 
-**Tier 2 — Secondary, optional:** an automated mutation-testing tool for the language in use (e.g. `cargo-mutants` for Rust, `mutmut`/`cosmic-ray` for Python, Stryker for JS/TS, PIT for Java/JVM). These generate mutants mechanically (arithmetic/comparison flips, deleted statements, boundary shifts) across a much larger surface than a human would think to check by hand, catching gaps Tier 1 missed. Use Tier 2 only:
-- scoped to specific pure-logic files/modules, never the whole codebase in one run,
-- against the seam's targeted test file, not the full suite,
-- after Tier 1 is complete, as a supplementary net rather than a replacement.
+**Tier 2 — Secondary, optional:** an automated mutation-testing tool for the language in use (e.g. `cargo-mutants` for Rust, `mutmut`/`cosmic-ray` for Python, Stryker for JS/TS, PIT for Java/JVM). These generate mutants mechanically (arithmetic/comparison flips, deleted statements, boundary shifts) across a much larger surface than a human would think to check by hand, catching gaps Tier 1 missed. Use Tier 2 only after Tier 1 is complete, as a supplementary net rather than a replacement. Apply the same scope discipline stated above: pure-logic files only, targeted test file only, never an unscoped codebase-wide sweep.
 
 Verify the exact invocation syntax for whichever tool applies to the stack in use — flags and defaults vary by tool version and are worth confirming against current docs rather than assumed.
 

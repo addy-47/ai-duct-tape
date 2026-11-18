@@ -1,6 +1,6 @@
 # Skills Library
 
-A collection of **26 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
+A collection of **29 structured agent workflows** designed for autonomous pair programming and AI agent orchestration.
 
 A skill in this repo is an executable standard operating procedure (SOP) that guides an AI agent through a specific engineering discipline — complete with discovery steps, human-in-the-loop checkpoints, and strict verification gates.
 
@@ -21,7 +21,8 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 | Audit a plan or bug report against the actual code before touching anything | `/feedback-review` |
 | Perform an adversarial senior code review for scale and maintainability | `/review` |
 | Construct a test structurally capable of catching real failures | `/create-test` |
-| Run an iterative testing loop until code genuinely passes | `/test` |
+| Execute tests and report evidence with an audit trail | `/qa` |
+| Run autonomous subagent loops and milestone checkpoints | `/orchestrate` |
 | Empirically prove a test catches regressions via deliberate fault injection | `/mutate` |
 | Apply a simple mechanical rule or style check across a large surface | `/create-sprints` |
 | Apply an emergency surgical patch to a broken production system | `/hotfix` |
@@ -52,12 +53,13 @@ A skill in this repo is an executable standard operating procedure (SOP) that gu
 * [skills/create-plan/SKILL.md](create-plan/SKILL.md) — Phased implementation planning (Phase 1 planned in detail; later phases kept high-level).
 * [skills/modify-plan/SKILL.md](modify-plan/SKILL.md) — Mid-thread adaptation of active implementation plans in response to discoveries.
 * [skills/create-loop/SKILL.md](create-loop/SKILL.md) — Autonomous loop skeleton with layers, sub-agents, gates, and scheduled check-ins.
+* [skills/orchestrate/SKILL.md](orchestrate/SKILL.md) — Execution and monitoring of autonomous subagent loops, lifecycle transitions, and milestone checkpoints.
 
 ### 3. 🔬 Review, Testing & Verification
 * [skills/feedback-review/SKILL.md](feedback-review/SKILL.md) — Pre-implementation audit: checks proposals against real codebase reality to eliminate hallucinations.
 * [skills/review/SKILL.md](review/SKILL.md) — Adversarial senior code review hunting for complexity, scale breaks, and anti-patterns with drop-in replacements.
 * [skills/create-test/SKILL.md](create-test/SKILL.md) — Structural test design ensuring production entry seams, boundaries, and False-Green tables are designed before writing test code.
-* [skills/test/SKILL.md](test/SKILL.md) — Execution testing workflow looping until tests are genuinely passing with output inspection beyond exit code 0.
+* [skills/qa/SKILL.md](qa/SKILL.md) — Test execution with verifiable audit trail, explicit coverage statement, and human-owned pass/fail decision.
 * [skills/mutate/SKILL.md](mutate/SKILL.md) — Post-green mutation validation seeding deliberate defects into production code to empirically confirm the test catches them.
 
 ### 4. 🛠️ Execution & Refactoring

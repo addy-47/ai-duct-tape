@@ -10,10 +10,10 @@ A collection of **7 specialized agent personas** that establish distinct operati
 |---|---|---|
 | [backend-engineer.md](backend-engineer.md) | Backend & APIs | Systems-first, fault-tolerant, data-boundary validation, strict connection pooling, transactions for multi-table ops, zero leaked stack traces. |
 | [frontend-engineer.md](frontend-engineer.md) | Frontend & UI | State-first, UI-second. Zero perceptual lag, closed design-system enforcement, strict service boundaries, mandatory 5 core UI states, usability over flair. |
-| [system-architect.md](system-architect.md) | Architecture & Specs | Long-term maintainability, trade-off analysis, explicit contract definition, boundary isolation, avoiding premature optimization. |
+| [system-architect.md](system-architect.md) | Architecture & Specs | Five Pivot Gates: lifecycle orthogonality, state-space bijection, boundary traces, failure matrix, spec-wide referential integrity. Spec-first, no silent coupling. |
 | [ml-research-engineer.md](ml-research-engineer.md) | ML, Data & Evals | Scientific rigor, deterministic data pipelines, leak-free splits, audited datasets, adversarial evaluation design over shallow LLM summaries. |
-| [qa-engineer.md](qa-engineer.md) | Verification & Audit | Adversarial verification, evidence-based review, finding false positives, verifying real runtime behavior over static assumptions. |
-| [test-engineer.md](test-engineer.md) | Automated Testing & Evals | Comprehensive test taxonomy, `/create-test` seam tracing, `/test` execution loops, `/mutate` empirical regression validation, zero unverified green tests. |
+| [qa-engineer.md](qa-engineer.md) | Verification & Audit | Adversarial verification, raw evidence over summaries, explicit coverage accounting, and three named verdicts: APPROVED / REJECTED / INSUFFICIENT EVIDENCE. |
+| [test-engineer.md](test-engineer.md) | Automated Testing & Evals | Seam-based taxonomy, `/create-test` design, `/qa` execution audit trail, `/mutate` empirical regression validation, findings-not-fixes, zero unverified green tests. |
 | [idea-validator.md](idea-validator.md) | Idea Validation | Idea validation & feasibility analysis | 
 
 ---

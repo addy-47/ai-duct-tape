@@ -36,7 +36,7 @@ flowchart LR
     B --> C[📐 /architect & /create-spec]
     C --> D[📋 /create-plan]
     D --> E[🛠️ /implement]
-    E --> F[🧪 /create-test & /test & /mutate]
+    E --> F[🧪 /create-test & /qa & /mutate]
     F --> G[🔬 /review]
     G --> H[🤝 /handoff]
 ```
@@ -45,7 +45,7 @@ flowchart LR
 2. **Architecture & Specification:** Formulate behavioral specs (`/create-spec`) and architecture docs (`/architect`).
 3. **Phased Planning:** Draft detailed step-by-step execution plans (`/create-plan`, `/create-loop`).
 4. **Execution & Implementation:** Implement changes (`/implement`, `/hotfix`, `/create-sprints`).
-5. **Rigorous Verification:** Construct structural tests (`/create-test`), execute test loops (`/test`), and empirically validate with mutation testing (`/mutate`) along with adversarial senior code reviews (`/review`, `/feedback-review`).
+5. **Rigorous Verification:** Construct structural tests (`/create-test`), execute them with an audit trail (`/qa`), and empirically validate with mutation testing (`/mutate`) along with adversarial senior code reviews (`/review`, `/feedback-review`).
 6. **Session Handoff:** Package state cleanly for the next thread (`/handoff`).
 
 ---
@@ -88,7 +88,7 @@ roles/test-engineer.md           → .agents/rules/
 skills/create-dataset/SKILL.md   → .agents/skills/create-dataset/SKILL.md
 skills/create-eval/SKILL.md      → .agents/skills/create-eval/SKILL.md
 skills/create-test/SKILL.md      → .agents/skills/create-test/SKILL.md
-skills/test/SKILL.md             → .agents/skills/test/SKILL.md
+skills/qa/SKILL.md               → .agents/skills/qa/SKILL.md
 skills/mutate/SKILL.md           → .agents/skills/mutate/SKILL.md
 style-guides/general.md          → .agents/rules/
 style-guides/testing.md          → .agents/rules/

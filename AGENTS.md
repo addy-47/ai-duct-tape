@@ -42,7 +42,8 @@ done
 | Writing/modifying frontend code | `GLOBAL_RULES.md` + `roles/frontend-engineer.md` + `style-guides/general.md` + `style-guides/design.md` + `style-guides/typescript-react.md` |
 | Architectural decisions / new features | `GLOBAL_RULES.md` + `roles/system-architect.md` + skills: `intent-alignment`, `architect`, `create-spec`, `validate` |
 | Planning implementation | skills: `create-plan`, `create-loop`, `modify-plan` |
-| Testing, evals & mutation validation | `roles/test-engineer.md` + `style-guides/testing.md` + skills: `create-test`, `test`, `mutate` |
+| Testing, evals & mutation validation | `roles/test-engineer.md` + `style-guides/testing.md` + skills: `create-test`, `qa`, `mutate` |
+| Autonomous subagent loops | skills: `create-loop`, `orchestrate` |
 | Verifying/reviewing evidence | `roles/qa-engineer.md` + skills: `review`, `feedback-review` |
 | Debugging a regression | skills: `rca` |
 | Tracing runtime control flow | skills: `trace` |

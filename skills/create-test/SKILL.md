@@ -1,6 +1,6 @@
 ---
 name: create-test
-description: Pre-implementation reasoning protocol for constructing tests that catch real production bugs. Stack- and project-agnostic. Enforces black-box scene contracts, environmental skew, temporal horizon coverage, and wiring parity before a line of test code is written. Trigger on "write a test for", "create test case", "design integration test", or "how should we test this component". Precedes /test and /mutate.
+description: Pre-implementation reasoning protocol for constructing tests that catch real production bugs. Stack- and project-agnostic. Enforces black-box scene contracts, environmental skew, temporal horizon coverage, and wiring parity before a line of test code is written. Trigger on "write a test for", "create test case", "design integration test", or "how should we test this component". Precedes /qa and /mutate.
 ---
 
 A good test is a thin wire connecting a real production entry point to a real observable output, under realistic environmental conditions, such that if anything on that wire broke — dropped data, wrong routing, skipped state transition, uncalibrated adaptation, or premature timeout — the test fails. A good test contains no control-flow logic of its own. It wires up production components, invokes the entry point, and reads the output.

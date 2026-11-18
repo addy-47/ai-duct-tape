@@ -7,9 +7,9 @@ Per-language and cross-cutting engineering standards. **Agents doing write opera
 | File | Scope |
 |---|---|
 | `general.md` | Language-agnostic best practices — applies to every stack: modularity, API standardization, CLI discipline, security, Docker, `.gitignore`. Read this **always**. |
-| `testing.md` | Cross-stack testing, evaluation, and benchmark standards: taxonomy, execution rules (sequential, release builds), per-stage latency, probabilistic ground truth thresholds, and testability seams. |
+| `testing.md` | Binding cross-stack test contract: levels by what they prove, one file per seam, the intent block with `MUTANT`, assertion rules (quiescence, no swallowed failures), local-run default with `unverified` reporting, fold/prune/rename, findings, plus eval and benchmark execution standards. |
 | `design.md` | Stack-agnostic UI/UX & design standards: design tokens, typography, copy architecture (`<xxx>Copy.ts`), layman language rules, gesture contracts, interactive states, accessibility (WCAG AA), and CSS conventions. |
-| `typescript-react.md` | TypeScript / React frontend code architecture and state management |
+| `typescript-react.md` | TypeScript / React architecture, state management, hook order, selectors, dormant subtrees, timer and GPU teardown, typed error contracts, overlay containment. |
 | `rust.md` | Rust backend/systems/services code |
 | `python.md` | Python services, ML pipelines, and scripts |
 | `go.md` | Go services and APIs |
